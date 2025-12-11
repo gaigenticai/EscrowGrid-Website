@@ -1,0 +1,556 @@
+/* Professional Escrow Animation */
+.value-animation {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+/* Sea Background */
+.sea {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40%;
+  background: linear-gradient(180deg,
+    rgba(59, 130, 246, 0.1) 0%,
+    rgba(59, 130, 246, 0.2) 100%);
+  animation: seaWaves 4s ease-in-out infinite;
+}
+
+@keyframes seaWaves {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Cargo Ship */
+.cargo-ship {
+  position: absolute;
+  bottom: 35%;
+  left: -150px;
+  width: 120px;
+  height: 40px;
+  animation: shipSail 15s linear infinite;
+}
+
+.ship-hull {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 25px;
+  background: rgba(100, 100, 100, 0.3);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 4px 4px 0 0;
+}
+
+.ship-deck {
+  position: absolute;
+  bottom: 25px;
+  width: 100%;
+  height: 15px;
+  background: rgba(150, 150, 150, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.ship-cargo {
+  position: absolute;
+  bottom: 30px;
+  width: 60px;
+  height: 10px;
+  left: 30px;
+  background: rgba(251, 191, 36, 0.3);
+  border: 1px solid rgba(251, 191, 36, 0.5);
+  border-radius: 2px;
+}
+
+.ship-sail {
+  position: absolute;
+  bottom: 35px;
+  left: 10px;
+  width: 3px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 1px;
+  animation: sailWave 2s ease-in-out infinite;
+}
+
+@keyframes shipSail {
+  from { transform: translateX(0); }
+  to { transform: translateX(calc(100vw + 300px)); }
+}
+
+@keyframes sailWave {
+  0%, 100% { transform: rotate(-5deg); }
+  50% { transform: rotate(5deg); }
+}
+
+/* Construction Site */
+.construction-site {
+  position: absolute;
+  bottom: 40%;
+  right: 20px;
+  width: 200px;
+  height: 150px;
+}
+
+/* Building Foundation */
+.building-foundation {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 20px;
+  background: rgba(100, 100, 100, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.4);
+}
+
+/* Building Floors */
+.building-floor {
+  position: absolute;
+  background: rgba(150, 150, 150, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  animation: floorAppear 2s ease-out forwards;
+  opacity: 0;
+}
+
+.floor-1 { bottom: 20px; width: 100%; height: 15px; animation-delay: 0.5s; }
+.floor-2 { bottom: 35px; width: 100%; height: 15px; animation-delay: 1s; }
+.floor-3 { bottom: 50px; width: 100%; height: 15px; animation-delay: 1.5s; }
+.floor-4 { bottom: 65px; width: 100%; height: 15px; animation-delay: 2s; }
+.floor-5 { bottom: 80px; width: 100%; height: 15px; animation-delay: 2.5s; }
+
+@keyframes floorAppear {
+  from {
+    opacity: 0;
+    transform: scaleY(0.2);
+  }
+  to {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}
+
+/* Construction Crane */
+.construction-crane {
+  position: absolute;
+  bottom: 20px;
+  right: 50px;
+  width: 3px;
+  height: 80px;
+  background: rgba(255, 255, 255, 0.3);
+  transform-origin: bottom;
+  animation: craneRotate 4s ease-in-out infinite;
+}
+
+.crane-arm {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.3);
+  transform-origin: right;
+}
+
+.crane-cable {
+  position: absolute;
+  bottom: 40px;
+  right: 60px;
+  width: 2px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Cargo Delivery */
+.cargo-delivery {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: rgba(251, 191, 36, 0.4);
+  border: 1px solid rgba(251, 191, 36, 0.6);
+  border-radius: 4px;
+  animation: cargoDelivery 3s ease-in-out infinite;
+  animation-delay: 8s;
+}
+
+@keyframes craneRotate {
+  0%, 100% { transform: rotate(-20deg); }
+  50% { transform: rotate(20deg); }
+}
+
+@keyframes cargoDelivery {
+  0% {
+    bottom: 35px;
+    right: 60px;
+    opacity: 1;
+  }
+  30% {
+    bottom: 80px;
+    right: 100px;
+    opacity: 1;
+  }
+  31% {
+    bottom: 80px;
+    right: 100px;
+    opacity: 0;
+  }
+  100% {
+    bottom: 80px;
+    right: 100px;
+    opacity: 0;
+  }
+}
+
+/* Escrow Lock Icon */
+.escrow-lock {
+  position: absolute;
+  bottom: 80px;
+  right: 90px;
+  width: 30px;
+  height: 30px;
+  background: rgba(16, 185, 129, 0.2);
+  border: 2px solid rgba(16, 185, 129, 0.4);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: lockPulse 2s ease-in-out infinite;
+  opacity: 0;
+  animation-delay: 2s;
+}
+
+.lock-body {
+  width: 14px;
+  height: 10px;
+  background: rgba(16, 185, 129, 0.4);
+  border-radius: 2px;
+}
+
+.lock-shackle {
+  position: absolute;
+  top: -8px;
+  width: 16px;
+  height: 12px;
+  border: 2px solid rgba(16, 185, 129, 0.4);
+  border-bottom: none;
+  border-radius: 8px 8px 0 0;
+}
+
+@keyframes lockPulse {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Progress Indicators */
+.progress-indicator {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  background: rgba(59, 130, 246, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  border-radius: 20px;
+  padding: 6px 16px;
+  backdrop-filter: blur(3px);
+}
+
+/* Problem-to-Solution Timeline */
+.problem-solution-timeline {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  height: 4px;
+  background: linear-gradient(90deg,
+    rgba(239, 68, 68, 0.3) 0%,
+    rgba(239, 68, 68, 0.1) 50%,
+    rgba(16, 185, 129, 0.1) 50%,
+    rgba(16, 185, 129, 0.3) 100%);
+}
+
+.timeline-indicator {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 3px solid rgba(255, 255, 255, 0.9);
+  background: rgba(59, 130, 246, 0.95);
+  box-shadow: 0 0 30px rgba(59, 130, 246, 0.8);
+  animation: moveIndicator 8s ease-in-out infinite;
+}
+
+@keyframes moveIndicator {
+  0%, 10% { left: 10%; background: rgba(239, 68, 68, 0.9); }
+  40%, 50% { left: 50%; background: rgba(251, 191, 36, 0.9); }
+  90%, 100% { left: 85%; background: rgba(16, 185, 129, 0.9); }
+}
+
+/* Problem Cards */
+.problems-container {
+  position: absolute;
+  top: 20%;
+  left: 5%;
+  right: 50%;
+  height: 60%;
+}
+
+.problem-card {
+  position: absolute;
+  background: rgba(239, 68, 68, 0.15);
+  border: 1px solid rgba(239, 68, 68, 0.4);
+  border-radius: 8px;
+  padding: 12px;
+  color: white;
+  font-size: 11px;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 0 20px rgba(239, 68, 68, 0.2);
+  animation: problemFloat 6s ease-in-out infinite;
+}
+
+.problem-card:nth-child(1) {
+  top: 10%;
+  left: 15%;
+  animation-delay: 0s;
+}
+
+.problem-card:nth-child(2) {
+  top: 35%;
+  left: 5%;
+  animation-delay: 1.5s;
+}
+
+.problem-card:nth-child(3) {
+  top: 60%;
+  left: 20%;
+  animation-delay: 3s;
+}
+
+.problem-card h4 {
+  margin: 0 0 8px 0;
+  font-size: 12px;
+  color: #fca5a5;
+  font-weight: bold;
+}
+
+.problem-card p {
+  margin: 0;
+  font-size: 10px;
+  opacity: 0.9;
+}
+
+.problem-metric {
+  display: block;
+  margin-top: 4px;
+  font-weight: bold;
+  color: #ef4444;
+}
+
+@keyframes problemFloat {
+  0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.8; }
+  50% { transform: translateY(-10px) rotate(-180deg); opacity: 1; }
+}
+
+/* Solution Cards */
+.solutions-container {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  right: 5%;
+  height: 60%;
+}
+
+.solution-card {
+  position: absolute;
+  background: rgba(16, 185, 129, 0.15);
+  border: 1px solid rgba(16, 185, 129, 0.4);
+  border-radius: 8px;
+  padding: 12px;
+  color: white;
+  font-size: 11px;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 0 20px rgba(16, 185, 129, 0.2);
+  animation: solutionFloat 6s ease-in-out infinite;
+}
+
+.solution-card:nth-child(1) {
+  top: 15%;
+  right: 10%;
+  animation-delay: 2s;
+}
+
+.solution-card:nth-child(2) {
+  top: 40%;
+  right: 5%;
+  animation-delay: 3.5s;
+}
+
+.solution-card:nth-child(3) {
+  top: 65%;
+  right: 15%;
+  animation-delay: 5s;
+}
+
+.solution-card h4 {
+  margin: 0 0 8px 0;
+  font-size: 12px;
+  color: #86efac;
+  font-weight: bold;
+}
+
+.solution-card p {
+  margin: 0;
+  font-size: 10px;
+  opacity: 0.9;
+}
+
+.solution-metric {
+  display: block;
+  margin-top: 4px;
+  font-weight: bold;
+  color: #10b981;
+}
+
+@keyframes solutionFloat {
+  0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.8; }
+  50% { transform: translateY(-10px) rotate(-180deg); opacity: 1; }
+}
+
+/* Transformation Arrow */
+.transformation-arrow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: pulseArrow 3s ease-in-out infinite;
+}
+
+.arrow-svg {
+  width: 48px;
+  height: 48px;
+  color: rgba(251, 191, 36, 0.9);
+  filter: drop-shadow(0 0 20px rgba(251, 191, 36, 0.6));
+}
+
+@keyframes pulseArrow {
+  0%, 100% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.2); opacity: 1; }
+}
+
+/* Floating Metrics */
+.floating-metrics {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.metric-bubble {
+  position: absolute;
+  background: rgba(59, 130, 246, 0.2);
+  border: 1px solid rgba(59, 130, 246, 0.5);
+  border-radius: 20px;
+  padding: 6px 12px;
+  color: white;
+  font-size: 10px;
+  font-weight: bold;
+  animation: floatMetric 8s ease-in-out infinite;
+  backdrop-filter: blur(3px);
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.3);
+}
+
+.metric-bubble:nth-child(1) {
+  top: 15%;
+  left: 30%;
+  animation-delay: 1s;
+}
+
+.metric-bubble:nth-child(2) {
+  top: 75%;
+  left: 60%;
+  animation-delay: 3s;
+}
+
+.metric-bubble:nth-child(3) {
+  top: 40%;
+  right: 25%;
+  animation-delay: 5s;
+}
+
+.metric-bubble:nth-child(4) {
+  top: 25%;
+  right: 40%;
+  animation-delay: 7s;
+}
+
+@keyframes floatMetric {
+  0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.7; }
+  25% { transform: translate(10px, -15px) scale(1.1); opacity: 1; }
+  50% { transform: translate(-5px, 10px) scale(1); opacity: 0.9; }
+  75% { transform: translate(15px, 5px) scale(1.05); opacity: 0.8; }
+}
+
+/* ROI Counter Animation */
+.roi-counter {
+  position: absolute;
+  bottom: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  background: rgba(251, 191, 36, 0.15);
+  border: 1px solid rgba(251, 191, 36, 0.4);
+  border-radius: 25px;
+  padding: 8px 20px;
+  backdrop-filter: blur(5px);
+  animation: roiPulse 4s ease-in-out infinite;
+  box-shadow: 0 0 25px rgba(251, 191, 36, 0.2);
+}
+
+@keyframes roiPulse {
+  0%, 100% { transform: translateX(-50%) scale(1); }
+  50% { transform: translateX(-50%) scale(1.05); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .problem-card, .solution-card {
+    font-size: 9px;
+    padding: 8px;
+  }
+
+  .problem-card h4, .solution-card h4 {
+    font-size: 10px;
+  }
+
+  .metric-bubble {
+    font-size: 8px;
+    padding: 4px 8px;
+  }
+
+  .roi-counter {
+    font-size: 12px;
+    padding: 6px 15px;
+  }
+}
