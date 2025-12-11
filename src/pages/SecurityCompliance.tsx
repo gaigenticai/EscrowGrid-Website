@@ -16,27 +16,27 @@ import {
 const securityFeatures = [
   {
     icon: Lock,
-    title: "Multi-Tenant Isolation",
+    title: "Zero-Trust Security Architecture",
     description:
-      "Each institution's data is logically isolated with strict access controls. No cross-tenant data leakage.",
+      "Multi-layer authentication with IP-based security, brute force detection, API key suspension, and comprehensive RBAC with granular permissions.",
   },
   {
     icon: FileText,
-    title: "Complete Audit Trail",
+    title: "Cryptographic Audit Trail",
     description:
-      "Every action, state change, and decision is logged with timestamps, actor IDs, and full context.",
+      "Tamper-proof audit logging with SHA-256 integrity verification, sequential ordering, and real-time webhook integration for compliance monitoring.",
   },
   {
     icon: Eye,
-    title: "Real-Time Monitoring",
+    title: "AI-Powered Real-Time Monitoring",
     description:
-      "Continuous monitoring for anomalies, failed authentication attempts, and suspicious patterns.",
+      "Advanced threat detection with SQL injection prevention, XSS protection, input sanitization, pattern analysis, and intelligent alerting systems.",
   },
   {
     icon: Server,
-    title: "Encrypted at Rest & Transit",
+    title: "Enterprise-Grade Infrastructure",
     description:
-      "AES-256 encryption for data at rest. TLS 1.3 for all API communications.",
+      "Production-grade compensation patterns, circuit breakers, distributed tracing, performance monitoring, and automatic failover capabilities.",
   },
 ];
 
@@ -180,6 +180,62 @@ export default function SecurityCompliance() {
         </div>
       </section>
 
+      {/* Real-Time Operations */}
+      <section className="py-20 bg-muted/50 border-y border-border">
+        <div className="container">
+          <div className="text-center mb-12">
+            <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-4">
+              Real-Time Operations & Intelligence
+            </h2>
+            <p className="text-muted-foreground max-w-xl mx-auto">
+              Production-grade monitoring, compensation patterns, and automated recovery systems
+              ensure business continuity and data consistency.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="bg-card rounded-xl border border-border p-6">
+              <h3 className="font-display font-semibold text-foreground mb-4 flex items-center gap-2">
+                <Eye className="h-5 w-5 text-primary" />
+                Performance Monitoring
+              </h3>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li>• Real-time escrow business metrics</li>
+                <li>• Transaction success/failure tracking</li>
+                <li>• Asset and institution monitoring</li>
+                <li>• Blockchain transaction analytics</li>
+                <li>• Intelligent alerting with webhooks</li>
+              </ul>
+            </div>
+            <div className="bg-card rounded-xl border border-border p-6">
+              <h3 className="font-display font-semibold text-foreground mb-4 flex items-center gap-2">
+                <Shield className="h-5 w-5 text-primary" />
+                Saga Compensation Patterns
+              </h3>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li>• Production-grade compensation logic</li>
+                <li>• Real API and database operations</li>
+                <li>• File system and message queue integration</li>
+                <li>• Circuit breaker and retry policies</li>
+                <li>• Automatic failure recovery</li>
+              </ul>
+            </div>
+            <div className="bg-card rounded-xl border border-border p-6">
+              <h3 className="font-display font-semibold text-foreground mb-4 flex items-center gap-2">
+                <Server className="h-5 w-5 text-primary" />
+                Data Analytics Engine
+              </h3>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li>• Real-time data archiving system</li>
+                <li>• Statistical analysis with percentiles</li>
+                <li>• Multi-tenant database queries</li>
+                <li>• Business intelligence calculations</li>
+                <li>• Performance bottleneck detection</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Audit & Logging */}
       <section className="py-20">
         <div className="container">
@@ -196,25 +252,25 @@ export default function SecurityCompliance() {
                 <li className="flex items-start gap-3">
                   <Shield className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
                   <span className="text-muted-foreground">
-                    Timestamped event log with actor identification
+                    SHA-256 cryptographic integrity verification for tamper-proof audit logs
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
                   <Shield className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
                   <span className="text-muted-foreground">
-                    State transition history with before/after snapshots
+                    Sequential ordering with real-time webhook integration to monitoring systems
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
                   <Shield className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
                   <span className="text-muted-foreground">
-                    Export capabilities for regulatory reporting
+                    Automated log rotation with external syslog and compliance system integration
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
                   <Shield className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
                   <span className="text-muted-foreground">
-                    Configurable retention policies
+                    Production-grade structured logging with business context and metadata preservation
                   </span>
                 </li>
               </ul>
@@ -226,19 +282,31 @@ export default function SecurityCompliance() {
               <pre className="text-sm overflow-x-auto">
                 <code className="text-muted-foreground">
 {`{
-  "eventId": "evt_audit_789",
-  "positionId": "pos_abc123",
-  "type": "STATE_TRANSITION",
-  "from": "FUNDED",
-  "to": "ACTIVE",
-  "actor": {
-    "type": "user",
-    "id": "user_admin_001",
-    "institution": "inst_acme"
+  "timestamp": "2025-01-15T14:22:00.123Z",
+  "level": "INFO",
+  "context": {
+    "requestId": "req_abc123def456",
+    "institutionId": "inst_acme_bank",
+    "userId": "user_admin_001",
+    "apiKeyId": "key_prod_789",
+    "ip": "203.0.113.42",
+    "userAgent": "EscrowGrid-API/1.0"
   },
-  "timestamp": "2024-01-15T14:22:00Z",
-  "ip": "203.0.113.42",
-  "reason": "Inspection approved"
+  "action": "UPDATE",
+  "entity": "POSITION",
+  "entityId": "pos_xyz789",
+  "oldValues": {
+    "status": "PENDING",
+    "amount": 500000.00
+  },
+  "newValues": {
+    "status": "ACTIVE",
+    "amount": 500000.00,
+    "approvedAt": "2025-01-15T14:22:00Z"
+  },
+  "message": "Position status updated from PENDING to ACTIVE",
+  "sequence": 12347,
+  "hash": "sha256:9f86d081884c7d659a2feaa0c55ad015..."
 }`}
                 </code>
               </pre>

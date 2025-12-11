@@ -594,6 +594,17 @@ export default function Platform() {
                     </div>
                   </div>
                 ))}
+                <div className="mt-6 p-4 bg-primary/5 rounded-lg border border-primary/20">
+                  <div className="flex items-center gap-2 mb-2">
+                    <BarChart3 className="h-5 w-5 text-primary" />
+                    <h4 className="font-semibold text-foreground">Production Analytics Now Available</h4>
+                  </div>
+                  <ul className="text-sm text-muted-foreground space-y-1">
+                    <li>• Real-time escrow business metrics and performance monitoring</li>
+                    <li>• Intelligent alerting with webhook and email integration</li>
+                    <li>• Advanced data archiving with retention policies</li>
+                  </ul>
+                </div>
               </div>
               <Button className="mt-8" asChild>
                 <Link to="/developers">
