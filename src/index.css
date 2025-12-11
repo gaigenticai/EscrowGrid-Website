@@ -145,3 +145,49 @@ All colors MUST be HSL.
     background-color: rgba(0, 0, 0, 0.7);
   }
 }
+
+/* Mobile Responsive Improvements */
+@media (max-width: 640px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  h1 {
+    line-height: 1.1;
+  }
+
+  h2 {
+    line-height: 1.2;
+  }
+
+  p {
+    line-height: 1.6;
+  }
+
+  /* Better touch targets on mobile */
+  .btn, button {
+    min-height: 44px;
+  }
+
+  /* Improve readability on small screens */
+  .text-sm {
+    font-size: 0.875rem;
+  }
+
+  .text-base {
+    font-size: 1rem;
+  }
+
+  .text-lg {
+    font-size: 1.125rem;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Improve spacing on medium screens */
+  section {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}

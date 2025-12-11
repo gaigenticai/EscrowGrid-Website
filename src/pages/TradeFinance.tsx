@@ -113,25 +113,25 @@ export default function TradeFinance() {
   return (
     <PageLayout>
       {/* Hero Section */}
-      <section className="py-12 md:py-20 bg-card border-y-2 border-dashed-monochrome">
+      <section className="py-8 sm:py-12 md:py-20 bg-card border-y-2 border-dashed-monochrome">
         <div className="container">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <div>
-              <BadgePill className="mb-6 border-2 border-dotted-monochrome">
+              <BadgePill className="mb-4 sm:mb-6 border-2 border-dotted-monochrome">
                 <Globe className="w-3 h-3 mr-1" />
                 International Trade Finance
               </BadgePill>
-              <h1 className="font-display text-4xl md:text-5xl font-bold mb-6 text-shadow-retro">
+              <h1 className="font-display text-3xl sm:text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 text-shadow-retro">
                 Global Trade Meets
-                <span className="block border-b-4 border-current pb-2">Digital Escrow Security</span>
+                <span className="block border-b-2 sm:border-b-4 border-current pb-1 sm:pb-2">Digital Escrow Security</span>
               </h1>
-              <p className="text-lg mb-8 leading-relaxed">
+              <p className="text-base sm:text-lg mb-6 sm:mb-8 leading-relaxed">
                 Revolutionize international trade with automated Letter of Credit workflows,
                 AI-powered document verification, and seamless cross-border payments.
                 Process transactions in <span className="font-semibold border-b-2 border-current">24-48 hours instead of weeks</span>
                 while maintaining full compliance across 180+ countries.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                 <Button size="lg" className="bg-foreground hover:bg-secondary text-background border-2 border-dashed-monochrome text-shadow-retro" asChild>
                   <Link to="/architecture" className="text-background">
                     <FileCheck className="mr-2 h-4 w-4" />

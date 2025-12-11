@@ -73,7 +73,7 @@ export default function SecurityCompliance() {
             <BadgePill variant="primary" className="mb-6">
               Security & Compliance
             </BadgePill>
-            <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-6">
+            <h1 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-6">
               Built for regulated industries
             </h1>
             <p className="text-lg text-muted-foreground mb-8">

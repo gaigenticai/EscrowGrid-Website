@@ -188,25 +188,25 @@ export default function Construction() {
   return (
     <PageLayout>
       {/* Hero Section */}
-      <section className="py-12 md:py-20 bg-card border-y-2 border-dashed-monochrome">
+      <section className="py-8 sm:py-12 md:py-20 bg-card border-y-2 border-dashed-monochrome">
         <div className="container">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <div>
-              <BadgePill className="mb-6 border-2 border-dotted-monochrome">
+              <BadgePill className="mb-4 sm:mb-6 border-2 border-dotted-monochrome">
                 <Building2 className="w-3 h-3 mr-1" />
                 Construction Escrow Solution
               </BadgePill>
-              <h1 className="font-display text-4xl md:text-5xl font-bold mb-6 text-shadow-retro">
+              <h1 className="font-display text-3xl sm:text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 text-shadow-retro">
                 Construction Payment
-                <span className="block border-b-4 border-current pb-2">Security & Control</span>
+                <span className="block border-b-2 sm:border-b-4 border-current pb-1 sm:pb-2">Security & Control</span>
               </h1>
-              <p className="text-lg mb-8 leading-relaxed">
+              <p className="text-base sm:text-lg mb-6 sm:mb-8 leading-relaxed">
                 Protect your construction projects with milestone-based escrow that ensures
                 fair payments, automated retainage management, and complete lien waiver compliance.
                 Reduce payment cycles from <span className="font-semibold border-b-2 border-current">60-90 days to 30-45 days</span>
                 while maintaining full audit trails.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 mb-8">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-6 sm:mb-8">
                 <Button size="lg" className="bg-foreground hover:bg-secondary text-background border-2 border-dashed-monochrome text-shadow-retro" asChild>
                   <Link to="/architecture" className="text-background">
                     <Building2 className="mr-2 h-4 w-4" />

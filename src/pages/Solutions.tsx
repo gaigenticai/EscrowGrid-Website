@@ -32,7 +32,7 @@ export default function Solutions() {
             <BadgePill variant="primary" className="mb-6">
               Solutions
             </BadgePill>
-            <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-6">
+            <h1 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-6">
               Purpose-built escrow solutions
             </h1>
             <p className="text-lg text-muted-foreground">

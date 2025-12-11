@@ -91,7 +91,7 @@ export default function Developers() {
             <BadgePill variant="primary" className="mb-6">
               Developers
             </BadgePill>
-            <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-6">
+            <h1 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-6">
               Get started in 10 minutes
             </h1>
             <p className="text-lg text-muted-foreground mb-8">

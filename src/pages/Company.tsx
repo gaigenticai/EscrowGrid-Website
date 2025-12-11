@@ -34,7 +34,7 @@ export default function Company() {
             <BadgePill variant="primary" className="mb-6">
               Company
             </BadgePill>
-            <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-6">
+            <h1 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-6">
               Why we're building EscrowGrid
             </h1>
             <p className="text-lg text-muted-foreground">

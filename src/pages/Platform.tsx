@@ -83,19 +83,25 @@ const features = [
 // Hover Image Component
 function HoverImage() {
   return (
-    <div className="relative hidden lg:block">
+    <div className="relative w-full h-full">
       <div className="group relative overflow-hidden rounded-lg border-2 border-dashed-monochrome">
         {/* Mono image (default) */}
         <img
           src="/assets/images/mono_image.png"
           alt="Escrow Infrastructure - Monochrome"
-          className="w-full h-auto object-contain transition-opacity duration-300 group-hover:opacity-0"
+          className="w-full h-auto object-contain transition-opacity duration-300 group-hover:opacity-0 lg:block hidden"
         />
-        {/* Color image (on hover) */}
+        {/* Mobile: Show static mono image */}
+        <img
+          src="/assets/images/mono_image.png"
+          alt="Escrow Infrastructure - Monochrome"
+          className="w-full h-auto object-contain block lg:hidden"
+        />
+        {/* Color image (on hover - desktop only) */}
         <img
           src="/assets/images/color_image.png"
           alt="Escrow Infrastructure - Color"
-          className="absolute inset-0 w-full h-auto object-contain transition-opacity duration-300 opacity-0 group-hover:opacity-100"
+          className="absolute inset-0 w-full h-auto object-contain transition-opacity duration-300 opacity-0 group-hover:opacity-100 lg:block hidden"
         />
       </div>
     </div>
@@ -419,27 +425,27 @@ export default function Platform() {
   return (
     <PageLayout>
       {/* Hero Section */}
-      <section className="py-12 md:py-16 bg-pattern border-y-2 border-dashed-monochrome relative overflow-hidden">
+      <section className="py-8 sm:py-12 md:py-16 bg-pattern border-y-2 border-dashed-monochrome relative overflow-hidden">
 
         <div className="container relative z-10">
-          <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-start lg:items-center">
-            <div className="max-w-4xl lg:pr-8">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-secondary border-2 border-dotted-monochrome rounded-full mb-6">
-              <AlertTriangle className="w-4 h-4" />
-              <span className="font-semibold">Industry Challenge</span>
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-20 items-start lg:items-center">
+            <div className="max-w-4xl lg:pr-8 order-2 lg:order-1">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 bg-secondary border-2 border-dotted-monochrome rounded-full mb-4 sm:mb-6">
+              <AlertTriangle className="w-3 h-3 sm:w-4 sm:h-4" />
+              <span className="font-semibold text-sm sm:text-base">Industry Challenge</span>
             </div>
-            <h1 className="font-display text-4xl md:text-7xl font-bold mb-6 leading-tight text-shadow-retro">
+            <h1 className="font-display text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 leading-tight text-shadow-retro">
               Financial institutions waste
-              <span className="block border-b-4 border-current pb-2">millions annually on escrow</span>
+              <span className="block border-b-2 sm:border-b-4 border-current pb-1 sm:pb-2">millions annually on escrow</span>
             </h1>
-            <p className="text-lg md:text-xl mb-8 leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl mb-6 sm:mb-8 leading-relaxed">
               Financial institutions waste <span className="font-bold">millions of engineering hours</span> rebuilding the same escrow logic across different products.
               Construction teams track projects in Excel. Trade finance desks manage compliance manually. Fintech platforms start from zero every time.
               <br /><br />
               EscrowGrid provides the <span className="font-bold border-b-2 border-current">Tokenization-as-a-Service infrastructure</span> that institutions need to launch escrow products in <span className="font-bold border-b-2 border-current">weeks, not years</span>.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
               <Button size="lg" className="bg-foreground hover:bg-secondary text-background border-2 border-dashed-monochrome text-shadow-retro" asChild>
                 <a
                   href="https://calendly.com/krishnagai"
@@ -462,7 +468,7 @@ export default function Platform() {
             </div>
 
             {/* Hover Image on Right Side */}
-            <div className="h-96 lg:h-auto lg:min-h-80 relative lg:mt-12 lg:ml-8">
+            <div className="h-64 sm:h-80 lg:h-auto lg:min-h-80 relative lg:mt-12 lg:ml-8 order-1 lg:order-2">
               <HoverImage />
             </div>
           </div>
@@ -543,7 +549,7 @@ export default function Platform() {
               Purpose-built for institutions that need reliable, compliant escrow infrastructure.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {audiences.map((audience) => (
               <FeatureCard
                 key={audience.title}
@@ -811,7 +817,7 @@ console.log(position.state); // "PENDING"`}
               Every feature designed with specific metrics and tangible business impact.
             </p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {enhancedCoreComponents.map((component) => (
               <Card key={component.title} className="group hover:shadow-lg transition-shadow">
                 <CardContent className="p-6">
@@ -995,7 +1001,7 @@ console.log(position.state); // "PENDING"`}
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {socialProofMetrics.map((metric, index) => (
               <Card key={index} className="text-center bg-gray-50 bg-secondary border-gray-200">
                 <CardContent className="p-6">

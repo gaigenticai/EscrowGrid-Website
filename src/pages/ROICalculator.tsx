@@ -43,7 +43,7 @@ export default function ROICalculator() {
               <Calculator className="w-3 h-3 mr-1" />
               ROI Calculator
             </BadgePill>
-            <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-6">
+            <h1 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-6">
               Calculate your savings
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">

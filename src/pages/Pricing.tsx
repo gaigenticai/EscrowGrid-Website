@@ -117,7 +117,7 @@ export default function Pricing() {
             <BadgePill variant="primary" className="mb-6">
               Pricing
             </BadgePill>
-            <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-6">
+            <h1 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-6">
               Transparent pricing for institutions
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
