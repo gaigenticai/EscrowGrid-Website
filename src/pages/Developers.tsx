@@ -2,82 +2,102 @@ import { PageLayout } from "@/components/layout/PageLayout";
 import { Button } from "@/components/ui/button";
 import { BadgePill } from "@/components/ui/badge-pill";
 import { FeatureCard } from "@/components/ui/feature-card";
-import { Code2, Terminal, Webhook, TestTube, ArrowRight } from "lucide-react";
+import { Code2, Terminal, Webhook, TestTube, ArrowRight, Repeat } from "lucide-react";
 
 const codeExamples = [
   {
     title: "1. Authentication",
     code: `// Every API request must include your API key
-curl -X POST "https://api.escrowgrid.com/v1/positions" \\
-  -H "Authorization: Bearer eg_live_xxxxxxxxxxxxxxxx" \\
+curl -X POST "https://api.escrowgrid.com/asset-templates" \\
+  -H "X-API-KEY: ak_live_xxxxxxxxxxxxxxxx" \\
   -H "Content-Type: application/json" \\
   -d '{
     "institutionId": "inst_acme123",
-    "templateId": "CONSTR_ESCROW",
-    "amount": 1500000
+    "code": "CONSTR_ESCROW",
+    "name": "Construction Escrow",
+    "vertical": "CONSTRUCTION",
+    "region": "EU_UK",
+    "config": {}
   }'`,
   },
   {
-    title: "2. Create a position",
-    code: `const response = await fetch('https://api.escrowgrid.com/v1/positions', {
+    title: "2. Create an asset",
+    code: `const response = await fetch('https://api.escrowgrid.com/assets', {
   method: 'POST',
   headers: {
-    'Authorization': 'Bearer eg_live_xxxxxxxxxxxxxxxx',
+    'X-API-KEY': 'ak_live_xxxxxxxxxxxxxxxx',
     'Content-Type': 'application/json'
   },
   body: JSON.stringify({
     institutionId: 'inst_acme123',
-    templateId: 'CONSTR_ESCROW',
-    assetId: 'project_456',
-    amount: 1500000,
+    templateId: 'tmpl_456',
+    label: 'Tower Heights Project',
+    metadata: { projectName: 'Tower Heights' }
+  })
+});
+
+const asset = await response.json();`,
+  },
+  {
+    title: "3. Open a position (idempotent)",
+    code: `const response = await fetch('https://api.escrowgrid.com/positions', {
+  method: 'POST',
+  headers: {
+    'X-API-KEY': 'ak_live_xxxxxxxxxxxxxxxx',
+    'Idempotency-Key': 'pos-create-001',
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({
+    institutionId: 'inst_acme123',
+    assetId: 'ast_789',
+    holderReference: 'SUBCONTRACTOR_123',
     currency: 'USD',
-    metadata: {
-      projectName: 'Tower Heights'
-    }
+    amount: 1500000
   })
 });
 
 const position = await response.json();
-// position.state === "PENDING"`,
-  },
-  {
-    title: "3. Get position status",
-    code: `const response = await fetch('https://api.escrowgrid.com/v1/positions/pos_abc123', {
-  headers: {
-    'Authorization': 'Bearer eg_live_xxxxxxxxxxxxxxxx'
-  }
-});
-
-const position = await response.json();
-console.log(position.state); // "FUNDED", "COMPLETED", etc.`,
+console.log(position.state); // "CREATED", "FUNDED", etc.`,
   },
 ];
 
 const endpoints = [
-  { method: "POST", path: "/institutions", description: "Create institution" },
-  { method: "GET", path: "/institutions/:id", description: "Get institution" },
-  { method: "POST", path: "/templates", description: "Create template" },
-  { method: "POST", path: "/positions", description: "Open position" },
-  { method: "GET", path: "/positions/:id", description: "Get position" },
-  { method: "POST", path: "/positions/:id/events", description: "Post event" },
-  { method: "GET", path: "/positions/:id/history", description: "Get history" },
+  { method: "POST", path: "/institutions", description: "Create institution (root)" },
+  { method: "GET", path: "/institutions", description: "List institutions" },
+  { method: "POST", path: "/institutions/:id/api-keys", description: "Create API key" },
+  { method: "POST", path: "/asset-templates", description: "Create asset template" },
+  { method: "GET", path: "/asset-templates", description: "List asset templates" },
+  { method: "POST", path: "/assets", description: "Create asset" },
+  { method: "GET", path: "/assets", description: "List assets" },
+  { method: "POST", path: "/positions", description: "Create position" },
+  { method: "GET", path: "/positions", description: "List positions" },
+  { method: "POST", path: "/positions/:id/transition", description: "Transition position state" },
+  { method: "POST", path: "/positions/:id/auto-transition", description: "Attempt conditional auto transition" },
+  { method: "POST", path: "/positions/:id/approvals", description: "Record approval decision" },
+  { method: "GET", path: "/ledger-events", description: "List ledger events" },
+  { method: "POST", path: "/institutions/:id/webhooks", description: "Create webhook (optional)" },
 ];
 
 const features = [
   {
     icon: Terminal,
     title: "RESTful API",
-    description: "Clean, predictable REST API with JSON requests/responses. Standard HTTP methods.",
+    description: "Clean, predictable REST API with JSON requests/responses and least-privilege scoped API keys (admin, writer, read_only).",
   },
   {
     icon: Webhook,
     title: "Webhooks",
-    description: "Real-time notifications for state changes, events, and system alerts.",
+    description: "Optional signed webhooks for state changes and settlement events.",
   },
   {
     icon: TestTube,
     title: "Sandbox Environment",
-    description: "Full-featured test environment. No real money, full API access.",
+    description: "Full-featured demo environment with test data. Sandbox tenants available on request.",
+  },
+  {
+    icon: Repeat,
+    title: "Idempotency",
+    description: "Safe retries on all write endpoints via Idempotency-Key.",
   },
 ];
 

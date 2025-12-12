@@ -23,32 +23,32 @@ const tradeFinanceFeatures = [
   {
     icon: FileCheck,
     title: "Template-Based LC Processing",
-    description: "Standardized LC templates with configurable clauses and automated document checking against predefined rules."
+    description: "Standardized TF_INVOICE and TF_LC templates with configurable release conditions."
   },
   {
     icon: Shield,
-    title: "Digital KYC/AML",
-    description: "Basic identity verification and sanctions screening through API integrations with major compliance providers."
+    title: "Bring‑Your‑Own KYC",
+    description: "Integrate with your bank's existing KYC/KYB/AML stack via attestations (KYC abstraction layer on the roadmap)."
   },
   {
     icon: Globe,
     title: "Major Currency Support",
-    description: "USD and EUR support with standard FX processing and basic multi-currency transaction handling."
+    description: "Multi‑currency positions using ISO 4217 codes; FX handled by your bank or treasury system."
   },
   {
     icon: Banknote,
     title: "API Banking Integration",
-    description: "RESTful APIs for connecting to partner banking systems with standard transaction processing capabilities."
+    description: "RESTful APIs for connecting to partner banking systems with idempotent retries."
   },
   {
     icon: FileText,
-    title: "Document Digitization",
-    description: "Digital document upload with OCR text extraction and template-based data validation."
+    title: "Document Rules",
+    description: "Evidence‑based release requirements; deeper document validation available via integrations/roadmap."
   },
   {
     icon: AlertCircle,
-    title: "Standard Compliance",
-    description: "Basic regulatory reporting templates and standard audit trails for US and EU transactions."
+    title: "Audit Trails",
+    description: "Complete ledger and audit history with optional signed webhooks."
   }
 ];
 
@@ -99,14 +99,11 @@ const supportedDocuments = [
 ];
 
 const complianceFrameworks = [
-  { name: "Core LC Standards", description: "Basic UCP 600 principles for documentary credits", coverage: "Template-based" },
-  { name: "KYC/AML", description: "Know Your Customer and Anti-Money Laundering checks", coverage: "API Integration" },
-  { name: "Document Validation", description: "Standard trade document verification rules", coverage: "Configurable" },
-  { name: "Payment Processing", description: "Standard banking payment rails integration", coverage: "API-based" },
-  { name: "Data Privacy", description: "Basic data protection and privacy controls", coverage: "GDPR-compliant" },
-  { name: "Audit Trail", description: "Complete transaction logging and audit trails", coverage: "Built-in" },
-  { name: "API Security", description: "OAuth 2.0 authentication and API rate limiting", coverage: "Standard" },
-  { name: "Regional Rules", description: "Customizable compliance rules by region", coverage: "US/EU Basic" }
+  { name: "Core LC Standards", description: "UCP 600-aligned template flows", coverage: "Template-based" },
+  { name: "Bring‑Your‑Own KYC/AML", description: "Rely on your bank/provider attestations", coverage: "Integration" },
+  { name: "Policy Rules", description: "Configurable release rules by region", coverage: "Configurable" },
+  { name: "Audit Trail", description: "Complete transaction logging and evidence trail", coverage: "Built-in" },
+  { name: "API Security", description: "API keys, rate limiting, and idempotency", coverage: "Standard" }
 ];
 
 export default function TradeFinance() {
@@ -126,10 +123,10 @@ export default function TradeFinance() {
                 <span className="block border-b-2 sm:border-b-4 border-current pb-1 sm:pb-2">Digital Escrow Security</span>
               </h1>
               <p className="text-base sm:text-lg mb-6 sm:mb-8 leading-relaxed">
-                Revolutionize international trade with automated Letter of Credit workflows,
-                AI-powered document verification, and seamless cross-border payments.
+                Revolutionize international trade with template-based invoice and LC escrow,
+                policy-driven releases, and seamless cross-border settlement.
                 Process transactions in <span className="font-semibold border-b-2 border-current">24-48 hours instead of weeks</span>
-                while maintaining full compliance across 180+ countries.
+                while relying on your bank’s KYC/AML and regional compliance rules.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                 <Button size="lg" className="bg-foreground hover:bg-secondary text-background border-2 border-dashed-monochrome text-shadow-retro" asChild>
@@ -281,7 +278,7 @@ export default function TradeFinance() {
               Comprehensive Document Support
             </h2>
             <p className="text-muted-foreground max-w-xl mx-auto">
-              AI-powered verification for all major trade finance documents with international standards compliance.
+              Configurable document requirements for evidence‑based releases. Automated verification available via integrations/roadmap.
             </p>
           </div>
 
@@ -313,10 +310,10 @@ export default function TradeFinance() {
         <div className="container">
           <div className="text-center mb-12">
             <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-4">
-              Global Compliance Frameworks
+              Policy & Compliance (Bring‑Your‑Own)
             </h2>
             <p className="text-muted-foreground max-w-xl mx-auto">
-              Built-in compliance with international trade finance standards and regulations across 180+ countries.
+              EscrowGrid provides policy layers and audit trails; your institution supplies KYC/AML and jurisdiction-specific rules.
             </p>
           </div>
 

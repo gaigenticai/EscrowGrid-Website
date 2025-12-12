@@ -11,6 +11,7 @@ import {
   Layers,
   Shield,
   Code2,
+  Webhook,
   ArrowRight,
   Play,
   Star,
@@ -28,7 +29,7 @@ const audiences = [
   {
     icon: Building2,
     title: "Construction Lenders",
-    description: "Automate draw schedules, inspections, and retainage releases.",
+    description: "Digitize draw schedules and retainage workflows with configurable releases.",
   },
   {
     icon: BarChart3,
@@ -51,12 +52,17 @@ const features = [
   {
     icon: Shield,
     title: "Policy Engine",
-    description: "Region-specific rules for US, EU/UK, Singapore, and UAE compliance.",
+    description: "Configurable policy layers per region, designed to integrate with your compliance and KYC stack.",
   },
   {
     icon: Layers,
     title: "Multi-Tenant",
     description: "Isolated institutions, templates, and positions by design.",
+  },
+  {
+    icon: Webhook,
+    title: "Retries & Integrations",
+    description: "Idempotent writes for safe retries, plus optional signed webhooks for real‑time updates.",
   },
 ];
 
@@ -118,7 +124,7 @@ export default function Index() {
               </h2>
               <p className="text-muted-foreground mb-6">
                 Create your first escrow position right now. Configure policies, set up workflows,
-                and watch the compliance engine work — all in your browser.
+                and watch the policy engine work — all in your browser.
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
                 <Button size="lg" asChild>
@@ -152,7 +158,7 @@ export default function Index() {
                   <div className="w-8 h-8 rounded-full bg-warning/10 flex items-center justify-center">
                     <Clock className="w-4 h-4 text-warning animate-pulse" />
                   </div>
-                  <span className="font-mono text-sm">Status: Pending compliance review</span>
+                  <span className="font-mono text-sm">Status: Pending policy checks</span>
                 </div>
                 <div className="pt-3 border-t border-border">
                   <div className="text-xs text-muted-foreground">
@@ -188,7 +194,7 @@ export default function Index() {
               Who we serve
             </h2>
             <p className="text-muted-foreground max-w-xl mx-auto">
-              Purpose-built for institutions that need reliable, compliant escrow infrastructure.
+              Purpose-built for institutions that need reliable escrow infrastructure.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">

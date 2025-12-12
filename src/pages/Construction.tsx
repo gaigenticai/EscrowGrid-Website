@@ -24,33 +24,33 @@ import { Link } from "react-router-dom";
 const constructionFeatures = [
   {
     icon: FileCheck,
-    title: "Template-Based Milestones",
-    description: "Configurable milestone templates for common construction phases with basic payment automation."
+    title: "Construction Escrow Templates",
+    description: "Pre-built CONSTR_ESCROW and CONSTR_RETAINAGE templates with extensible configuration."
   },
   {
     icon: ShieldCheck,
-    title: "Basic Lien Tracking",
-    description: "Simple lien waiver collection and digital record keeping with standard template processing."
+    title: "Policy-Driven Releases",
+    description: "Configurable policy checks per region, with conditional releases and multi-party approvals on the roadmap."
   },
   {
     icon: Calculator,
-    title: "Standard Retainage",
-    description: "Basic retainage calculation (5-10%) with conditional release templates and simple approval workflows."
+    title: "Retainage Workflows",
+    description: "Standard retainage holdback states and release flows, configurable to your contract terms."
   },
   {
     icon: FileCheck,
-    title: "Digital Payment Apps",
-    description: "Digital payment application forms with template-based data capture and basic validation."
+    title: "Audit Trail & Webhooks",
+    description: "Full position and ledger history with optional signed webhooks for milestone events."
   },
   {
     icon: Shield,
-    title: "Document Management",
-    description: "Digital document storage, photo uploads, and basic compliance record keeping."
+    title: "API Integrations",
+    description: "API-first integration into lender and project systems with idempotent retries."
   },
   {
     icon: Users,
-    title: "Contractor Verification",
-    description: "Basic contractor verification, simple payment workflows, and standard approval chains."
+    title: "Lien & Inspection Add‑ons",
+    description: "Lien waiver and inspection workflows available via integrations and roadmap."
   }
 ];
 
@@ -156,19 +156,19 @@ const milestoneWorkflow = [
 const lienWaiverTypes = [
   {
     type: "Conditional Waiver Template",
-    description: "Standard template for conditional lien waivers with digital signature capture",
+    description: "Standard template for conditional lien waivers (integration/roadmap)",
     timing: "Uploaded with payment application",
     priority: "Required for milestone payments"
   },
   {
     type: "Unconditional Waiver Template",
-    description: "Basic unconditional waiver template with automated data population",
+    description: "Basic unconditional waiver template (integration/roadmap)",
     timing: "Generated upon payment confirmation",
     priority: "Required for progress payments"
   },
   {
     type: "Final Waiver Template",
-    description: "Comprehensive final waiver template for project completion documentation",
+    description: "Comprehensive final waiver template (integration/roadmap)",
     timing: "Generated for final payment processing",
     priority: "Required for project closeout"
   }
@@ -202,7 +202,7 @@ export default function Construction() {
               </h1>
               <p className="text-base sm:text-lg mb-6 sm:mb-8 leading-relaxed">
                 Protect your construction projects with milestone-based escrow that ensures
-                fair payments, automated retainage management, and complete lien waiver compliance.
+                fair payments, retainage holdbacks, and configurable releases.
                 Reduce payment cycles from <span className="font-semibold border-b-2 border-current">60-90 days to 30-45 days</span>
                 while maintaining full audit trails.
               </p>
@@ -347,10 +347,10 @@ export default function Construction() {
         <div className="container">
           <div className="text-center mb-12">
             <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-4">
-              Mechanics Lien Protection System
+              Roadmap: Mechanics Lien Protection
             </h2>
             <p className="text-muted-foreground max-w-xl mx-auto">
-              Automated lien waiver collection and tracking to protect all project stakeholders.
+              Lien waiver collection and tracking available via integrations, with deeper automation on the roadmap.
             </p>
           </div>
 
@@ -379,14 +379,14 @@ export default function Construction() {
             <CardContent className="p-6">
               <div className="flex items-center gap-3 mb-4">
                 <AlertCircle className="h-6 w-6 text-foreground" />
-                <h4 className="font-semibold text-foreground">Automated Lien Waiver Workflow</h4>
+                <h4 className="font-semibold text-foreground">Lien Waiver Workflow (Integration/Roadmap)</h4>
               </div>
               <ol className="space-y-2 text-sm text-muted-foreground">
-                <li>1. System generates appropriate waiver forms based on payment application</li>
-                <li>2. Automated distribution to all contractors and subcontractors</li>
-                <li>3. Digital signature collection with audit trail</li>
-                <li>4. Verification of waiver completeness before payment release</li>
-                <li>5. Secure storage and retrieval for project documentation</li>
+                <li>1. Planned: Generate waiver forms from payment applications</li>
+                <li>2. Planned: Distribute waivers to contractors and subcontractors</li>
+                <li>3. Planned: Collect digital signatures with audit trail</li>
+                <li>4. Planned: Verify waiver completeness before release</li>
+                <li>5. Planned: Store and retrieve waivers for closeout</li>
               </ol>
             </CardContent>
           </Card>

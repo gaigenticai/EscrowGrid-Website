@@ -71,7 +71,7 @@ const features = [
   {
     icon: Shield,
     title: "Policy Engine",
-    description: "Region-specific rules for US, EU/UK, Singapore, and UAE compliance.",
+    description: "Configurable policy layers per region, designed to integrate with your compliance and KYC stack.",
   },
   {
     icon: Layers,
@@ -204,7 +204,7 @@ const beforeAfterComparisons = [
     },
     after: {
       title: "Automated Policy Enforcement",
-      description: "Pass audits 70% faster with built-in compliance rules",
+      description: "Pass audits faster with configurable policy layers and full audit trails",
       icon: <ThumbsUp className="h-5 w-5" />
     }
   },
@@ -234,37 +234,37 @@ const enhancedCoreComponents = [
   {
     icon: FileText,
     title: "Template System",
-    description: "Pre-built templates for construction, trade finance, real estate, and general escrow.",
-    metrics: ["12+ industry templates", "Construction milestones", "Trade finance LC/DC", "Real estate trust accounts"],
-    outcomes: ["Launch products 4x faster", "Use proven industry standards", "Reduce legal review time"]
+    description: "Pre-built escrow templates for construction and trade finance, with extensible configs for your own products.",
+    metrics: ["4 core templates today", "Extensible configuration", "Safe rule evaluation"],
+    outcomes: ["Launch products faster", "Reuse proven workflows", "Reduce legal review cycles"]
   },
   {
     icon: Settings,
     title: "Policy Layer",
-    description: "Built-in compliance for US, EU, Singapore, UAE regulations and standards.",
-    metrics: ["4 major regions", "PSD2/PSD3 ready", "SOX compliant", "MAS/FDIC/CBUAE rules"],
-    outcomes: ["Enter new markets instantly", "Pass regulatory reviews", "Reduce compliance overhead"]
+    description: "Configurable policy rules per region with a safe, testable rule engine. Bring your own compliance and KYC attestations.",
+    metrics: ["4 supported regions", "Safe rule engine", "KYC attestation ready"],
+    outcomes: ["Standardize controls", "Integrate with bank KYC", "Reduce manual checks"]
   },
   {
     icon: Database,
     title: "Ledger Abstraction",
     description: "Pluggable storage backends. Start with PostgreSQL, scale to distributed ledgers.",
-    metrics: ["Multiple backend options", "Zero-downtime migration", "FATF compliant"],
-    outcomes: ["Future-proof architecture", "Gradual modernization path", "Handle multi-jurisdictional requirements"]
+    metrics: ["PostgreSQL events", "Optional on‑chain ledger", "Append‑only history"],
+    outcomes: ["Future‑proof architecture", "Clear evidence trail", "Interoperability ready"]
   },
   {
     icon: Lock,
     title: "Access Control",
     description: "Role-based permissions with institution-level, template-level, and position-level granularity.",
-    metrics: ["5-level permissions", "Audit-ready logs", "Segregated funds enforcement"],
-    outcomes: ["Prevent fund commingling", "Pass trust account audits", "Maintain licensing compliance"]
+    metrics: ["Role-based API keys", "Audit-ready logs", "Segregated data by institution"],
+    outcomes: ["Support least‑privilege access", "Enable segregation of duties", "Improve operational control"]
   },
   {
     icon: BarChart3,
     title: "Reporting & Analytics",
-    description: "Compliance dashboards, scheduled reports, and regulatory data export capabilities.",
-    metrics: ["Regulatory reporting templates", "Real-time compliance dashboards", "AML/CFT monitoring"],
-    outcomes: ["Automate regulator reporting", "Reduce audit preparation time", "Real-time risk monitoring"]
+    description: "Operational metrics and export-ready audit/ledger trails. Advanced analytics available as an enterprise add‑on.",
+    metrics: ["Prometheus metrics", "Structured audit events", "CSV/JSON exports"],
+    outcomes: ["Simplify ops reporting", "Speed up audits", "Support enterprise integrations"]
   }
 ];
 
@@ -283,10 +283,10 @@ const interactiveDemoSections = [
     buttonText: "Browse Templates"
   },
   {
-    title: "Test Compliance Engine",
-    description: "See how our policy layer automatically enforces regional rules and prevents violations.",
+    title: "Test Policy Engine",
+    description: "See how the policy layer enforces your regional rules and controls.",
     type: "compliance",
-    buttonText: "Test Compliance Rules"
+    buttonText: "Test Policy Rules"
   }
 ];
 
@@ -299,13 +299,13 @@ const socialProofMetrics = [
   },
   {
     value: "4 major",
-    label: "Regulatory regions covered (US, EU, Singapore, UAE)",
-    change: "Compliance-ready from day one"
+    label: "Regions supported for policy templates (US, EU/UK, SG, UAE)",
+    change: "Configurable policy layers"
   },
   {
     value: "7-14",
     label: "Typical construction payment milestones",
-    change: "Automated in our platform"
+    change: "Supported via configurable workflows"
   },
   {
     value: "30-60 days",
@@ -487,10 +487,10 @@ export default function Platform() {
               <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-4">
                 See it in action. No setup required.
               </h2>
-              <p className="text-muted-foreground mb-6">
-                Create your first escrow position right now. Configure policies, set up workflows,
-                and watch the compliance engine work — all in your browser.
-              </p>
+	              <p className="text-muted-foreground mb-6">
+	                Create your first escrow position right now. Configure policies, set up workflows,
+	                and watch the policy engine work — all in your browser.
+	              </p>
               <div className="flex flex-col sm:flex-row gap-3">
                 <Button size="lg" asChild>
                   <Link to="/architecture">
@@ -525,8 +525,8 @@ export default function Platform() {
                   <div className="w-8 h-8 rounded-full bg-warning/10 flex items-center justify-center">
                     <Clock className="w-4 h-4 text-warning animate-pulse" />
                   </div>
-                  <span className="font-mono text-sm">Status: Pending compliance review</span>
-                </div>
+	                  <span className="font-mono text-sm">Status: Pending policy checks</span>
+	                </div>
                 <div className="pt-3 border-t border-border">
                   <div className="text-xs text-muted-foreground">
                     Demo completed by 1,247+ financial professionals this month
@@ -546,7 +546,7 @@ export default function Platform() {
               Who we serve
             </h2>
             <p className="text-muted-foreground max-w-xl mx-auto">
-              Purpose-built for institutions that need reliable, compliant escrow infrastructure.
+	              Purpose-built for institutions that need reliable escrow infrastructure.
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
@@ -713,7 +713,7 @@ console.log(position.state); // "PENDING"`}
                       <span className="text-xs font-bold text-foreground">1</span>
                     </div>
                     <span className="text-muted-foreground">
-                      <strong className="text-foreground">Institution:</strong> Your organization (Bank, NBFC, Platform) with complete data isolation and compliance configuration
+	                      <strong className="text-foreground">Institution:</strong> Your organization (Bank, NBFC, Platform) with complete data isolation and policy configuration
                     </span>
                   </li>
                   <li className="flex items-start gap-2">
@@ -761,10 +761,10 @@ console.log(position.state); // "PENDING"`}
                     <CheckCircle className="h-4 w-4 text-foreground" />
                     <span>Real-time state tracking and audit trails</span>
                   </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle className="h-4 w-4 text-foreground" />
-                    <span>Configurable policies and regional compliance</span>
-                  </li>
+	                  <li className="flex items-center gap-2">
+	                    <CheckCircle className="h-4 w-4 text-foreground" />
+	                    <span>Configurable policies per region</span>
+	                  </li>
                 </ul>
               </div>
             </div>
@@ -940,9 +940,9 @@ console.log(position.state); // "PENDING"`}
                 <h3 className="font-display text-xl font-bold text-foreground mb-3 group-hover:text-foreground transition-colors">
                   Trade Finance Escrow
                 </h3>
-                <p className="text-muted-foreground mb-6">
-                  Automated Letter of Credit workflows with AI-powered document verification and global compliance.
-                </p>
+	                <p className="text-muted-foreground mb-6">
+	                  Evidence‑based invoice and LC escrow with configurable release conditions and audit trails.
+	                </p>
                 <div className="grid grid-cols-2 gap-4 mb-6">
                   <div className="text-center">
                     <div className="text-2xl font-bold text-foreground mb-1">24-48h</div>
@@ -971,9 +971,9 @@ console.log(position.state); // "PENDING"`}
                 <h3 className="font-display text-xl font-bold text-foreground mb-3 group-hover:text-foreground transition-colors">
                   Construction Escrow
                 </h3>
-                <p className="text-muted-foreground mb-6">
-                  Milestone-based payments with automated retainage management and mechanics lien protection.
-                </p>
+	                <p className="text-muted-foreground mb-6">
+	                  Milestone and retainage workflows with configurable approvals and releases.
+	                </p>
                 <div className="grid grid-cols-2 gap-4 mb-6">
                   <div className="text-center">
                     <div className="text-2xl font-bold text-foreground mb-1">5-10%</div>
@@ -1084,9 +1084,9 @@ console.log(position.state); // "PENDING"`}
                 <p className="text-sm text-muted-foreground mb-4">
                   Tokenization-as-a-Service platform with pre-built infrastructure
                 </p>
-                <div className="text-xs text-foreground font-medium">
-                  Weeks to launch • Continuous updates • Built-in compliance
-                </div>
+	                <div className="text-xs text-foreground font-medium">
+	                  Weeks to launch • Continuous updates • Policy layers & audit trails
+	                </div>
               </div>
             </div>
 

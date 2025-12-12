@@ -14,29 +14,29 @@ import {
 } from "lucide-react";
 
 const securityFeatures = [
-  {
-    icon: Lock,
-    title: "Zero-Trust Security Architecture",
-    description:
-      "Multi-layer authentication with IP-based security, brute force detection, API key suspension, and comprehensive RBAC with granular permissions.",
-  },
+	  {
+	    icon: Lock,
+	    title: "Zero-Trust Security Architecture",
+	    description:
+	      "Role-based and scoped API key authentication, optional root IP allowlisting, distributed rate limiting, and strict input validation.",
+	  },
   {
     icon: FileText,
     title: "Cryptographic Audit Trail",
     description:
-      "Tamper-proof audit logging with SHA-256 integrity verification, sequential ordering, and real-time webhook integration for compliance monitoring.",
+      "Structured audit events for every action, stored in PostgreSQL and exportable for reviews.",
   },
   {
     icon: Eye,
-    title: "AI-Powered Real-Time Monitoring",
+    title: "Operational Monitoring",
     description:
-      "Advanced threat detection with SQL injection prevention, XSS protection, input sanitization, pattern analysis, and intelligent alerting systems.",
+      "Prometheus metrics, health/readiness probes, and optional webhooks for operational alerts.",
   },
   {
     icon: Server,
-    title: "Enterprise-Grade Infrastructure",
+    title: "Production-Ready Deployment",
     description:
-      "Production-grade compensation patterns, circuit breakers, distributed tracing, performance monitoring, and automatic failover capabilities.",
+      "Docker/Kubernetes friendly, with safe rule evaluation, idempotent writes, and multi-tenant isolation.",
   },
 ];
 
@@ -44,22 +44,22 @@ const regions = [
   {
     code: "US",
     name: "United States",
-    policies: ["SOC 2 Type II alignment", "State escrow regulations", "UCC Article 4A"],
+    policies: ["Configurable policy templates", "Bring-your-own KYC/KYB attestations", "Audit exports"],
   },
   {
     code: "EU/UK",
     name: "Europe & United Kingdom",
-    policies: ["GDPR compliance", "PSD2 considerations", "FCA guidelines"],
+    policies: ["Configurable policy templates", "Data residency guidance", "KYC reliance support"],
   },
   {
     code: "SG",
     name: "Singapore",
-    policies: ["MAS guidelines", "PDPA compliance", "PSA regulations"],
+    policies: ["Configurable policy templates", "KYC reliance support", "Audit exports"],
   },
   {
     code: "UAE",
     name: "United Arab Emirates",
-    policies: ["CBUAE regulations", "DIFC framework", "ADGM standards"],
+    policies: ["Configurable policy templates", "KYC reliance support", "Audit exports"],
   },
 ];
 
@@ -77,8 +77,8 @@ export default function SecurityCompliance() {
               Built for regulated industries
             </h1>
             <p className="text-lg text-muted-foreground mb-8">
-              Enterprise-grade security with region-specific compliance. 
-              EscrowGrid provides the infrastructure; your institution handles licensing.
+              Enterprise-grade security with configurable policy layers. 
+              EscrowGrid provides the infrastructure; your institution supplies compliance rules and KYC via existing systems.
             </p>
             <Button asChild>
               <a
@@ -180,16 +180,15 @@ export default function SecurityCompliance() {
         </div>
       </section>
 
-      {/* Real-Time Operations */}
+      {/* Roadmap Operations */}
       <section className="py-20 bg-muted/50 border-y border-border">
         <div className="container">
           <div className="text-center mb-12">
             <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-4">
-              Real-Time Operations & Intelligence
+              Roadmap: Enterprise Operations & Intelligence
             </h2>
             <p className="text-muted-foreground max-w-xl mx-auto">
-              Production-grade monitoring, compensation patterns, and automated recovery systems
-              ensure business continuity and data consistency.
+              Optional enterprise add-ons for deeper monitoring, recovery, and analytics.
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-6">

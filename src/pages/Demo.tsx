@@ -88,7 +88,7 @@ const apiExamples = {
       },
       policy: {
         approvalRequired: true,
-        complianceChecks: ["AML", "KYC", "Sanctions"],
+        policyChecks: ["KYC_ATTESTED", "SANCTIONS_SCREENED"],
         autoRelease: false
       }
     },
@@ -191,7 +191,7 @@ const getEndpointsForIndustry = (industry) => {
           name: "Document Verification",
           method: "POST",
           path: "/api/v1/positions/:id/verify-documents",
-          description: "AI-powered document compliance verification"
+          description: "Document policy verification (integration/roadmap)"
         }
       ];
     case "merger-acquisition":
@@ -1542,11 +1542,11 @@ export default function Architecture() {
                                   </div>
                                   <div className="bg-gray-50 p-3 rounded text-sm">
                                     <pre className="font-mono">{`{
-  "complianceChecks": {
-    "mandatory": ["AML", "KYC", "Sanctions"],
+  "policyChecks": {
+    "mandatory": ["KYC_ATTESTED", "SANCTIONS_SCREENED"],
     "conditional": {
-      "amount > 1000000": ["EnhancedDueDiligence"],
-      "international": ["FATCA", "CRS"]
+      "amount > 1000000": ["EnhancedDueDiligence (roadmap)"],
+      "international": ["FATCA/CRS (roadmap)"]
     }
   },
   "autoRejectOnFailure": true,
@@ -1751,9 +1751,9 @@ export default function Architecture() {
                         <CardContent>
                           <div className="space-y-4">
                             <div className="border rounded-lg p-4">
-                              <h5 className="font-semibold mb-2">Compliance Integration</h5>
-                              <p className="text-sm text-muted-foreground">Connect with AML/KYC providers for enhanced compliance</p>
-                            </div>
+	                              <h5 className="font-semibold mb-2">KYC/Compliance Integration</h5>
+	                              <p className="text-sm text-muted-foreground">Connect with bank KYC/KYB systems or providers for attestations</p>
+	                            </div>
                             <div className="border rounded-lg p-4">
                               <h5 className="font-semibold mb-2">ERP Integration</h5>
                               <p className="text-sm text-muted-foreground">Integrate with financial systems for automated policy application</p>
