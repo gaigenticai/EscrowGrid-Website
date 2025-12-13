@@ -91,6 +91,10 @@ const endpoints = [
   { method: "POST", path: "/token-series", description: "Create token series" },
   { method: "POST", path: "/token-series/:seriesId/activate", description: "Activate token series" },
   { method: "POST", path: "/token-series/:seriesId/offchain/transfer", description: "Transfer off-chain tokens (gated)" },
+  { method: "GET", path: "/integrations/adapters", description: "List available adapter profiles" },
+  { method: "POST", path: "/integrations", description: "Create an integration instance" },
+  { method: "POST", path: "/integrations/:integrationId/health", description: "Check integration health" },
+  { method: "POST", path: "/integrations/:integrationId/attestations/issue", description: "Issue attestation via adapter" },
   { method: "GET", path: "/audit/events", description: "Query audit events" },
 ];
 
@@ -344,14 +348,20 @@ curl -X GET "https://api.escrowgrid.com/audit/events?limit=50" \\
               </div>
 
               <div>
-                <h3 className="font-semibold text-foreground mb-4">Request attestations</h3>
+                <h3 className="font-semibold text-foreground mb-4">Create an integration + request attestations</h3>
                 <pre className="bg-background border border-border rounded-lg p-4 text-sm overflow-x-auto">
                   <code className="text-muted-foreground">
-{`# Ask an integration adapter to issue an attestation
+{`# Create a webhook-based KYC/AML integration
+curl -X POST "https://api.escrowgrid.com/integrations" \\
+  -H "Authorization: Bearer eg_live_xxxxxxxxxxxxxxxx" \\
+  -H "Content-Type: application/json" \\
+  -d '{ "providerType": "kyc_aml", "providerName": "webhook", "config": { "endpoint": "https://kyc.example.com/escrowgrid/attest" } }'
+
+# Ask an integration adapter to issue an attestation
 curl -X POST "https://api.escrowgrid.com/integrations/int_.../attestations/issue" \\
   -H "Authorization: Bearer eg_live_xxxxxxxxxxxxxxxx" \\
   -H "Content-Type: application/json" \\
-  -d '{ "kind": "kyc_pass", "subjectId": "pty_..." }'`}
+  -d '{ "kind": "kyc_pass", "partyId": "pty_...", "issuerPartyId": "pty_..." }'`}
                   </code>
                 </pre>
               </div>

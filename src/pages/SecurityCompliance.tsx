@@ -201,7 +201,7 @@ export default function SecurityCompliance() {
                 <li>• Real-time asset and tokenization metrics</li>
                 <li>• Transaction success/failure tracking</li>
                 <li>• Asset and institution monitoring</li>
-                <li>• Blockchain transaction analytics</li>
+                <li>• Execution transaction analytics (optional)</li>
                 <li>• Intelligent alerting via integrations</li>
               </ul>
             </div>

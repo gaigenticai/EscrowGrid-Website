@@ -50,7 +50,7 @@ const executionOptions = [
     icon: Repeat,
     title: "Permissioned networks",
     description:
-      "Settle issuance/transfers on Corda/Hyperledger/Quorum-style rails via an execution adapter.",
+      "Settle issuance/transfers on private permissioned ledgers via an execution adapter (bring your own network).",
   },
   {
     icon: Settings,

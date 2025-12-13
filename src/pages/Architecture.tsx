@@ -27,7 +27,7 @@ const executionRails = [
     icon: Repeat,
     title: "Permissioned networks",
     description:
-      "Settle issuance/transfers on private networks (Corda/Hyperledger/Quorum-style) via adapters.",
+      "Settle issuance/transfers on private permissioned ledgers via adapters (bring your own network).",
   },
   {
     icon: Settings,
@@ -41,6 +41,16 @@ const executionRails = [
     description:
       "Settle on-chain through an execution adapter and your preferred custody/settlement model.",
   },
+];
+
+const integrationAdapters = [
+  { type: "kyc_aml", name: "KYC/AML + sanctions/PEP" },
+  { type: "credit_risk", name: "Credit scoring + underwriting" },
+  { type: "legal_docs", name: "E‑sign + legal doc automation" },
+  { type: "trustee", name: "Trustee/custodian confirmations" },
+  { type: "settlement", name: "Payment rails + proof-of-payment" },
+  { type: "oracle", name: "Registries, trade docs, document AI" },
+  { type: "custom", name: "Construction + lending ops systems" },
 ];
 
 export default function Architecture() {
@@ -146,6 +156,43 @@ export default function Architecture() {
         </div>
       </section>
 
+      {/* Integrations */}
+      <section className="py-16 bg-card border-y border-border">
+        <div className="container">
+          <div className="grid md:grid-cols-2 gap-10 items-start">
+            <div>
+              <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-4">
+                Integrations are adapters
+              </h2>
+              <p className="text-muted-foreground mb-6">
+                Approvals, KYC/AML, trustees, credit checks, registries, and payment confirmations
+                are modeled as attestations. Adapters can be internal or webhook-backed. The core
+                stays clean; your institution chooses the vendors and rails.
+              </p>
+              <Button variant="outline" asChild>
+                <Link to="/developers">
+                  View integration endpoints
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+            </div>
+            <div className="bg-background rounded-xl border border-border p-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {integrationAdapters.map((a) => (
+                  <div
+                    key={a.type}
+                    className="rounded-lg border border-border p-4 bg-card"
+                  >
+                    <div className="text-xs text-muted-foreground mb-1">{a.type}</div>
+                    <div className="font-medium text-foreground">{a.name}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Event-sourced backbone */}
       <section className="py-16 bg-card border-y border-border">
         <div className="container">
@@ -240,4 +287,3 @@ POST /token-series/{seriesId}/.../mint`}
     </PageLayout>
   );
 }
-
