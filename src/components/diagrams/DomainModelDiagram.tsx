@@ -1,10 +1,10 @@
 import { ArrowDown, ArrowRight } from "lucide-react";
 
 const levels = [
-  { label: "Institution", description: "Bank, NBFC, Platform" },
-  { label: "Template", description: "CONSTR_ESCROW, TF_INVOICE" },
-  { label: "Asset", description: "Project, Contract, Invoice" },
-  { label: "Position", description: "Individual escrow account" },
+  { label: "Tenant", description: "Bank, lender, platform" },
+  { label: "Parties", description: "Borrower, buyer/seller, SPV, custodian" },
+  { label: "Asset", description: "Invoice, pay app, loan note, collateral" },
+  { label: "Token Series", description: "Issuance + transfers via adapters" },
 ];
 
 export function DomainModelDiagram() {

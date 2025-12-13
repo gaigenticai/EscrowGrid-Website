@@ -43,22 +43,22 @@ const audiences = [
   {
     icon: Landmark,
     title: "Banks & NBFCs",
-    description: "Launch escrow products without building infrastructure from scratch.",
+    description: "Tokenize regulated assets without rebuilding the control plane.",
   },
   {
     icon: Building2,
     title: "Construction Lenders",
-    description: "Automate draw schedules, inspections, and retainage releases.",
+    description: "Tokenize pay apps and retainage with evidence and approval gates.",
   },
   {
     icon: BarChart3,
     title: "Trade Finance Desks",
-    description: "Secure invoice and LC-backed flows with policy-driven releases.",
+    description: "Tokenize invoices, POs, and documents with anti-double-finance controls.",
   },
   {
     icon: Layers,
     title: "Fintech Platforms",
-    description: "Embed escrow into your product with our multi-tenant API.",
+    description: "Embed tokenization into your product with an API-first platform.",
   },
 ];
 
@@ -71,12 +71,13 @@ const features = [
   {
     icon: Shield,
     title: "Policy Engine",
-    description: "Configurable policy layers per region, designed to integrate with your compliance and KYC stack.",
+    description:
+      "Gate-enforced lifecycle transitions and policy checks designed to integrate with your compliance stack.",
   },
   {
     icon: Layers,
     title: "Multi-Tenant",
-    description: "Isolated institutions, templates, and positions by design.",
+    description: "Isolated tenants, keys, and data boundaries by design.",
   },
 ];
 
@@ -88,19 +89,19 @@ function HoverImage() {
         {/* Mono image (default) */}
         <img
           src="/assets/images/mono_image.png"
-          alt="Escrow Infrastructure - Monochrome"
+          alt="Tokenization Infrastructure - Monochrome"
           className="w-full h-auto object-contain transition-opacity duration-300 group-hover:opacity-0 lg:block hidden"
         />
         {/* Mobile: Show static mono image */}
         <img
           src="/assets/images/mono_image.png"
-          alt="Escrow Infrastructure - Monochrome"
+          alt="Tokenization Infrastructure - Monochrome"
           className="w-full h-auto object-contain block lg:hidden"
         />
         {/* Color image (on hover - desktop only) */}
         <img
           src="/assets/images/color_image.png"
-          alt="Escrow Infrastructure - Color"
+          alt="Tokenization Infrastructure - Color"
           className="absolute inset-0 w-full h-auto object-contain transition-opacity duration-300 opacity-0 group-hover:opacity-100 lg:block hidden"
         />
       </div>
@@ -187,24 +188,24 @@ const beforeAfterComparisons = [
   {
     before: {
       title: "Custom Code Per Product",
-      description: "Rebuilding escrow logic 7+ times across different products",
+      description: "Rebuilding token issuance, gating, and audit plumbing per product",
       icon: <ThumbsDown className="h-5 w-5 text-destructive" />
     },
     after: {
-      title: "Templates & Configuration",
-      description: "Configure once, deploy anywhere with reusable templates",
+      title: "Canonical Gates + Overrides",
+      description: "Start with audited defaults, then tune requirements per tenant",
       icon: <ThumbsUp className="h-5 w-5" />
     }
   },
   {
     before: {
       title: "Manual Compliance Reviews",
-      description: "6-week audit cycles for every new escrow product",
+      description: "Ad-hoc approvals with no standardized evidence trail",
       icon: <ThumbsDown className="h-5 w-5 text-destructive" />
     },
     after: {
       title: "Automated Policy Enforcement",
-      description: "Pass audits faster with configurable policy layers and full audit trails",
+      description: "Gate every lifecycle step with attestations and immutable audit events",
       icon: <ThumbsUp className="h-5 w-5" />
     }
   },
@@ -216,7 +217,7 @@ const beforeAfterComparisons = [
     },
     after: {
       title: "Real-Time State Management",
-      description: "Every position automatically tracked with complete audit trails",
+      description: "Every asset and token op tracked with complete audit trails",
       icon: <ThumbsUp className="h-5 w-5" />
     }
   }
@@ -227,44 +228,47 @@ const enhancedCoreComponents = [
   {
     icon: Layers,
     title: "Lifecycle Engine",
-    description: "Manages position states with policy-enforced transitions and real-time monitoring.",
-    metrics: ["7 core states", "Industry standard transitions", "Real-time monitoring"],
-    outcomes: ["Automate 85% of state changes", "Eliminate manual tracking errors", "Process positions in days not weeks"]
+    description: "Manages asset lifecycles with gate-enforced transitions and immutable audit events.",
+    metrics: ["Canonical lifecycle states", "Gate-enforced transitions", "Idempotent writes"],
+    outcomes: ["Standardize workflows", "Reduce manual exceptions", "Make audits repeatable"]
   },
   {
     icon: FileText,
-    title: "Template System",
-    description: "Pre-built escrow templates for construction and trade finance, with extensible configs for your own products.",
-    metrics: ["4 core templates today", "Extensible configuration", "Safe rule evaluation"],
-    outcomes: ["Launch products faster", "Reuse proven workflows", "Reduce legal review cycles"]
+    title: "Schema + Gate Registry",
+    description:
+      "Audited schemas and canonical gate configs for trade finance, construction, and lending asset kinds.",
+    metrics: ["12+ asset kinds", "Tenant overrides", "Evidence + attestations"],
+    outcomes: ["Launch faster", "Reduce legal review loops", "Keep controls consistent"]
   },
   {
     icon: Settings,
     title: "Policy Layer",
-    description: "Configurable policy rules per region with a safe, testable rule engine. Bring your own compliance and KYC attestations.",
-    metrics: ["4 supported regions", "Safe rule engine", "KYC attestation ready"],
-    outcomes: ["Standardize controls", "Integrate with bank KYC", "Reduce manual checks"]
+    description:
+      "Enforce policy requirements at transitions and token ops; integrate approvals/KYC/AML as attestations.",
+    metrics: ["Attestation-first", "Least-privilege keys", "Tenant boundaries"],
+    outcomes: ["Separate duties cleanly", "Integrate existing systems", "Reduce manual checks"]
   },
   {
     icon: Database,
-    title: "Ledger Abstraction",
-    description: "Pluggable storage backends. Start with PostgreSQL, scale to distributed ledgers.",
-    metrics: ["PostgreSQL events", "Optional on‑chain ledger", "Append‑only history"],
-    outcomes: ["Future‑proof architecture", "Clear evidence trail", "Interoperability ready"]
+    title: "Event-Sourced Backbone",
+    description:
+      "Append-only event store in PostgreSQL to make invariants enforceable and audit exports simple.",
+    metrics: ["Immutable audit log", "Actor attribution", "Exportable events"],
+    outcomes: ["Prove who did what", "Reconstruct state", "Support external audits"]
   },
   {
     icon: Lock,
     title: "Access Control",
-    description: "Role-based permissions with institution-level, template-level, and position-level granularity.",
-    metrics: ["Role-based API keys", "Audit-ready logs", "Segregated data by institution"],
-    outcomes: ["Support least‑privilege access", "Enable segregation of duties", "Improve operational control"]
+    description: "Scoped API keys and tenant isolation designed for regulated environments.",
+    metrics: ["Admin / writer / read-only", "Audit-ready metadata", "Tenant isolation"],
+    outcomes: ["Least-privilege access", "Segregation of duties", "Operational control"]
   },
   {
     icon: BarChart3,
     title: "Reporting & Analytics",
-    description: "Operational metrics and export-ready audit/ledger trails. Advanced analytics available as an enterprise add‑on.",
-    metrics: ["Prometheus metrics", "Structured audit events", "CSV/JSON exports"],
-    outcomes: ["Simplify ops reporting", "Speed up audits", "Support enterprise integrations"]
+    description: "Operational metrics and export-ready audit trails for reviews and investigations.",
+    metrics: ["Structured audit events", "Queryable history", "Health/ready probes"],
+    outcomes: ["Simplify ops reporting", "Speed up audits", "Support integrations"]
   }
 ];
 
@@ -272,19 +276,19 @@ const enhancedCoreComponents = [
 const interactiveDemoSections = [
   {
     title: "See State Transitions in Action",
-    description: "Watch how funds move securely through defined states with policy enforcement.",
+    description: "Watch assets move through lifecycle steps with evidence + gate enforcement.",
     type: "transitions",
     buttonText: "Try Interactive Demo"
   },
   {
-    title: "Explore Template Library",
-    description: "Browse our 50+ pre-built escrow templates for construction, trade finance, and more.",
-    type: "templates",
-    buttonText: "Browse Templates"
+    title: "Explore Canonical Gates",
+    description: "See default gates per asset kind and how tenant overrides tighten/loosen requirements.",
+    type: "gates",
+    buttonText: "Explore Gates"
   },
   {
     title: "Test Policy Engine",
-    description: "See how the policy layer enforces your regional rules and controls.",
+    description: "See how policy checks and attestations protect token ops and transitions.",
     type: "compliance",
     buttonText: "Test Policy Rules"
   }
@@ -294,23 +298,23 @@ const interactiveDemoSections = [
 const socialProofMetrics = [
   {
     value: "5-10%",
-    label: "Standard retainage in construction escrow",
-    change: "Built into our templates"
+    label: "Typical retainage in construction finance",
+    change: "Modelled as asset kinds + gates"
   },
   {
-    value: "4 major",
-    label: "Regions supported for policy templates (US, EU/UK, SG, UAE)",
-    change: "Configurable policy layers"
+    value: "12+",
+    label: "Canonical asset kinds shipped",
+    change: "Trade finance + construction + lending"
   },
   {
     value: "7-14",
-    label: "Typical construction payment milestones",
-    change: "Supported via configurable workflows"
+    label: "Typical construction milestones",
+    change: "Serviced via lifecycle transitions"
   },
   {
-    value: "30-60 days",
-    label: "Security deposit return requirements by state",
-    change: "Tracking built-in"
+    value: "Trial → Paid",
+    label: "License upgrades without reinstall",
+    change: "Tenant entitlements are event-sourced"
   }
 ];
 
@@ -321,42 +325,42 @@ const competitiveComparison = [
     escrowgrid: true,
     custom: false,
     legacy: false,
-    description: "RESTful APIs with modern developer experience"
+    description: "RESTful APIs with OpenAPI spec and idempotent writes"
   },
   {
-    feature: "Multi-Region Compliance",
+    feature: "Attestation-First Compliance",
     escrowgrid: true,
     custom: false,
     legacy: false,
-    description: "US/EU/Singapore/UAE regulations built-in"
+    description: "Integrate KYC/AML/approvals as attestations; gates enforce them"
   },
   {
-    feature: "Industry Templates",
+    feature: "Canonical Gates",
     escrowgrid: true,
     custom: false,
     legacy: false,
-    description: "Construction, trade finance, real estate ready"
+    description: "Default gate configs per asset kind with tenant overrides"
   },
   {
     feature: "Time to Market",
     escrowgrid: "Weeks",
     custom: "6-12 months",
     legacy: "12+ months",
-    description: "From planning to first transaction"
+    description: "From integration to first issuance"
   },
   {
     feature: "Regulatory Updates",
     escrowgrid: "Automatic",
     custom: "Manual",
     legacy: "Manual",
-    description: "PSD3, SOX, MAS updates maintained"
+    description: "Update gate/policy configs without rewriting core logic"
   },
   {
-    feature: "Trust Account Management",
-    escrowgrid: "Automated",
-    custom: "Manual spreadsheets",
-    legacy: "Legacy systems",
-    description: "Segregated funds tracking and reporting"
+    feature: "Execution Flexibility",
+    escrowgrid: "Pluggable",
+    custom: "Single rail",
+    legacy: "Rigid",
+    description: "Off-chain, permissioned, EVM, or custodian rails via adapters"
   }
 ];
 
@@ -371,12 +375,12 @@ const audienceTabs = [
         description: "Every state change, event, and decision logged with timestamps and actor IDs.",
       },
       {
-        title: "Policy Enforcement",
-        description: "Region-specific rules automatically applied to prevent non-compliant operations.",
+        title: "Gate Enforcement",
+        description: "Evidence and attestations required for each lifecycle transition and token op.",
       },
       {
         title: "Multi-tenant Isolation",
-        description: "Institution data is logically isolated with strict access controls.",
+        description: "Tenant data is logically isolated with strict access controls.",
       },
     ],
   },
@@ -386,16 +390,16 @@ const audienceTabs = [
     icon: Settings,
     features: [
       {
-        title: "Template Library",
-        description: "Pre-built templates for common escrow types: construction, trade, general.",
+        title: "Canonical Defaults",
+        description: "Start with canonical gates for each asset kind and evolve safely over time.",
       },
       {
-        title: "Admin Console",
-        description: "Visual dashboard to manage positions, review pending actions, and generate reports.",
+        title: "Approvals as Attestations",
+        description: "Internal approvers or external systems can issue attestations for gates.",
       },
       {
         title: "Configurable Workflows",
-        description: "Adjust state transitions, approval requirements, and release conditions.",
+        description: "Apply tenant overrides to tighten/loosen requirements without forking core logic.",
       },
     ],
   },
@@ -406,15 +410,15 @@ const audienceTabs = [
     features: [
       {
         title: "RESTful APIs",
-        description: "Clean, predictable endpoints with TypeScript SDK and OpenAPI spec.",
+        description: "Clean, predictable endpoints with an OpenAPI spec and strong invariants.",
       },
       {
-        title: "Webhooks",
-        description: "Real-time notifications for state changes, events, and system alerts.",
+        title: "Audit Stream",
+        description: "Queryable audit events for integrations and reporting.",
       },
       {
-        title: "Sandbox Environment",
-        description: "Full-featured test environment with simulated payment rails.",
+        title: "Deploy Anywhere",
+        description: "Run SaaS or on-prem via Docker Compose or Helm with trial-to-paid licensing.",
       },
     ],
   },
@@ -436,13 +440,21 @@ export default function Platform() {
             </div>
             <h1 className="font-display text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 leading-tight text-shadow-retro">
               Financial institutions waste
-              <span className="block border-b-2 sm:border-b-4 border-current pb-1 sm:pb-2">millions annually on escrow</span>
+              <span className="block border-b-2 sm:border-b-4 border-current pb-1 sm:pb-2">
+                millions annually on bespoke infrastructure
+              </span>
             </h1>
             <p className="text-base sm:text-lg md:text-xl mb-6 sm:mb-8 leading-relaxed">
-              Financial institutions waste <span className="font-bold">millions of engineering hours</span> rebuilding the same escrow logic across different products.
-              Construction teams track projects in Excel. Trade finance desks manage compliance manually. Fintech platforms start from zero every time.
+              Financial institutions waste <span className="font-bold">millions of engineering hours</span>{" "}
+              rebuilding the same primitives: asset registries, evidence capture, lifecycle enforcement, audit trails, and token
+              issuance/transfer.
+              Construction teams track pay apps in Excel. Trade finance desks chase documents manually. Lending desks stitch
+              together servicing systems.
               <br /><br />
-              EscrowGrid provides the <span className="font-bold border-b-2 border-current">Tokenization-as-a-Service infrastructure</span> that institutions need to launch escrow products in <span className="font-bold border-b-2 border-current">weeks, not years</span>.
+              EscrowGrid provides the{" "}
+              <span className="font-bold border-b-2 border-current">Tokenization-as-a-Service control plane</span>{" "}
+              that institutions need to ship regulated workflows in{" "}
+              <span className="font-bold border-b-2 border-current">weeks, not years</span>.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
@@ -488,8 +500,8 @@ export default function Platform() {
                 See it in action. No setup required.
               </h2>
 	              <p className="text-muted-foreground mb-6">
-	                Create your first escrow position right now. Configure policies, set up workflows,
-	                and watch the policy engine work — all in your browser.
+	                Create your first tokenized asset right now. Attach evidence, request lifecycle transitions,
+	                and watch gates and attestations enforce policy — all in your browser.
 	              </p>
               <div className="flex flex-col sm:flex-row gap-3">
                 <Button size="lg" asChild>
@@ -513,23 +525,23 @@ export default function Platform() {
                   <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
                     <CheckCircle className="w-4 h-4 text-primary" />
                   </div>
-                  <span className="font-mono text-sm">Position created: pos_3fn8a2b9c1d0e7f5</span>
+                  <span className="font-mono text-sm">Asset created: ast_3fn8a2b9c1d0e7f5</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
                     <CheckCircle className="w-4 h-4 text-primary" />
                   </div>
-                  <span className="font-mono text-sm">Policy rules applied: 4 active</span>
+                  <span className="font-mono text-sm">Canonical gates loaded: 12+ asset kinds</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <div className="w-8 h-8 rounded-full bg-warning/10 flex items-center justify-center">
                     <Clock className="w-4 h-4 text-warning animate-pulse" />
                   </div>
-	                  <span className="font-mono text-sm">Status: Pending policy checks</span>
+	                  <span className="font-mono text-sm">Status: Awaiting attestations</span>
 	                </div>
                 <div className="pt-3 border-t border-border">
                   <div className="text-xs text-muted-foreground">
-                    Demo completed by 1,247+ financial professionals this month
+                    Demo runs in-browser. No setup required.
                   </div>
                 </div>
               </div>
@@ -546,7 +558,7 @@ export default function Platform() {
               Who we serve
             </h2>
             <p className="text-muted-foreground max-w-xl mx-auto">
-	              Purpose-built for institutions that need reliable escrow infrastructure.
+	              Purpose-built for institutions that need reliable tokenization infrastructure.
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
@@ -574,9 +586,10 @@ export default function Platform() {
                 Infrastructure, not marketplace
               </h2>
               <p className="text-muted-foreground mb-6">
-                EscrowGrid provides the rails for escrow operations. You maintain
-                relationships with your clients. We handle the complexity of state
-                management, audit trails, and policy enforcement.
+                EscrowGrid provides the control plane for asset tokenization. You maintain
+                relationships with your clients and your preferred settlement rails. We handle the
+                complexity of evidence, lifecycle enforcement, audit trails, and policy-gated token
+                operations.
               </p>
               <div className="space-y-4">
                 {features.map((feature) => (
@@ -600,9 +613,9 @@ export default function Platform() {
                     <h4 className="font-semibold text-foreground">Production Analytics Now Available</h4>
                   </div>
                   <ul className="text-sm text-muted-foreground space-y-1">
-                    <li>• Real-time escrow business metrics and performance monitoring</li>
-                    <li>• Intelligent alerting with webhook and email integration</li>
-                    <li>• Advanced data archiving with retention policies</li>
+                    <li>• Health/readiness probes for orchestrators</li>
+                    <li>• Queryable audit events with actor attribution</li>
+                    <li>• Prometheus-friendly operational metrics</li>
                   </ul>
                 </div>
               </div>
@@ -616,20 +629,22 @@ export default function Platform() {
             <div className="bg-background rounded-xl border border-border p-6">
               <pre className="text-sm overflow-x-auto">
                 <code className="text-muted-foreground">
-{`// Open a new escrow position
-const position = await escrowgrid.positions.create({
-  institutionId: "inst_abc123",
-  templateId: "CONSTR_ESCROW",
-  assetId: "asset_project_456",
-  amount: 1500000,
-  currency: "USD",
-  metadata: {
-    projectName: "Tower Heights"
-  }
-});
+{`# Create an asset (tenant inferred from API key)
+curl -X POST "https://api.escrowgrid.com/assets" \\
+  -H "Authorization: Bearer eg_live_xxxxxxxxxxxxxxxx" \\
+  -H "Content-Type: application/json" \\
+  -d '{
+    "assetClass": "trade_finance",
+    "assetKind": "invoice",
+    "schemaVersion": "v1",
+    "data": { "invoiceNumber": "INV-1001", "amount": 250000, "currency": "USD" }
+  }'
 
-// Position created in PENDING state
-console.log(position.state); // "PENDING"`}
+# Create a token series for that asset (execution is pluggable)
+curl -X POST "https://api.escrowgrid.com/token-series" \\
+  -H "Authorization: Bearer eg_live_xxxxxxxxxxxxxxxx" \\
+  -H "Content-Type: application/json" \\
+  -d '{ "assetId": "ast_...", "symbol": "INV1001", "decimals": 0 }'`}
                 </code>
               </pre>
             </div>
@@ -649,7 +664,7 @@ console.log(position.state); // "PENDING"`}
               From Manual Chaos to Automated Excellence
             </h2>
             <p className="text-muted-foreground max-w-xl mx-auto">
-              See how EscrowGrid transforms every aspect of escrow operations.
+              See how EscrowGrid transforms every aspect of asset tokenization operations.
             </p>
           </div>
 
@@ -698,8 +713,8 @@ console.log(position.state); // "PENDING"`}
                 Tokenization-as-a-Service Architecture
               </h2>
               <p className="text-muted-foreground mb-6">
-                EscrowGrid provides a <span className="font-bold text-foreground bg-gray-100 from-amber-600 to-orange-600">4-layer hierarchical model</span> that mirrors how financial institutions actually operate.
-                Each layer provides isolation while enabling shared infrastructure and services.
+                EscrowGrid uses a <span className="font-bold text-foreground bg-gray-100 from-amber-600 to-orange-600">tenant-first model</span>{" "}
+                that isolates data while keeping integrations and execution rails composable.
               </p>
 
               <div className="bg-gray-50 from-amber-50/70 to-orange-50/70 rounded-xl border border-gray-200 p-6 mb-6">
@@ -713,7 +728,7 @@ console.log(position.state); // "PENDING"`}
                       <span className="text-xs font-bold text-foreground">1</span>
                     </div>
                     <span className="text-muted-foreground">
-	                      <strong className="text-foreground">Institution:</strong> Your organization (Bank, NBFC, Platform) with complete data isolation and policy configuration
+	                      <strong className="text-foreground">Tenant:</strong> Your organization (bank, lender, platform) with isolated data and API keys
                     </span>
                   </li>
                   <li className="flex items-start gap-2">
@@ -721,7 +736,7 @@ console.log(position.state); // "PENDING"`}
                       <span className="text-xs font-bold text-foreground">2</span>
                     </div>
                     <span className="text-muted-foreground">
-                      <strong className="text-foreground">Template:</strong> Escrow type configuration (CONSTR_ESCROW, TF_INVOICE) with pre-built business logic and state transitions
+                      <strong className="text-foreground">Parties:</strong> Borrower/buyer/seller/SPV/custodian identities used for gating and balances
                     </span>
                   </li>
                   <li className="flex items-start gap-2">
@@ -729,7 +744,7 @@ console.log(position.state); // "PENDING"`}
                       <span className="text-xs font-bold text-foreground">3</span>
                     </div>
                     <span className="text-muted-foreground">
-                      <strong className="text-foreground">Asset:</strong> The underlying project, contract, or invoice that represents the real-world value being escrowed
+                      <strong className="text-foreground">Asset:</strong> The underlying invoice/pay app/loan note + evidence and lifecycle state
                     </span>
                   </li>
                   <li className="flex items-start gap-2">
@@ -737,7 +752,7 @@ console.log(position.state); // "PENDING"`}
                       <span className="text-xs font-bold text-foreground">4</span>
                     </div>
                     <span className="text-muted-foreground">
-                      <strong className="text-foreground">Position:</strong> Individual escrow account with funds, state management, and complete audit trails
+                      <strong className="text-foreground">Token Series:</strong> Issuance and transfers through off-chain, permissioned, EVM, or custodian adapters
                     </span>
                   </li>
                 </ul>
@@ -755,7 +770,7 @@ console.log(position.state); // "PENDING"`}
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckCircle className="h-4 w-4 text-foreground" />
-                    <span>Reusable templates across different escrow types</span>
+                    <span>Canonical gates across asset kinds</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckCircle className="h-4 w-4 text-foreground" />
@@ -884,7 +899,7 @@ console.log(position.state); // "PENDING"`}
               Experience the platform without commitment
             </h2>
             <p className="text-muted-foreground max-w-xl mx-auto">
-              Interactive demos showing exactly how EscrowGrid solves real escrow challenges.
+              Interactive demos showing exactly how EscrowGrid solves real tokenization challenges.
             </p>
           </div>
 
@@ -923,14 +938,14 @@ console.log(position.state); // "PENDING"`}
               Industry Solutions
             </BadgePill>
             <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-4">
-              Specialized escrow flows for complex industries
+              Specialized tokenization slices for complex industries
             </h2>
             <p className="text-muted-foreground max-w-xl mx-auto">
-              Pre-built templates and automated workflows for Trade Finance and Construction escrow scenarios.
+              Canonical gates and lifecycle defaults for trade finance, construction, and lending — with safe tenant overrides.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {/* Trade Finance Card */}
             <Card className="group hover:shadow-lg transition-all hover:border-dotted-monochrome">
               <CardContent className="p-6">
@@ -938,10 +953,10 @@ console.log(position.state); // "PENDING"`}
                   <FileCheck className="h-6 w-6 text-foreground" />
                 </div>
                 <h3 className="font-display text-xl font-bold text-foreground mb-3 group-hover:text-foreground transition-colors">
-                  Trade Finance Escrow
+                  Trade Finance
                 </h3>
 	                <p className="text-muted-foreground mb-6">
-	                  Evidence‑based invoice and LC escrow with configurable release conditions and audit trails.
+	                  Tokenize invoices and trade documents with evidence requirements and anti-double-finance gates.
 	                </p>
                 <div className="grid grid-cols-2 gap-4 mb-6">
                   <div className="text-center">
@@ -969,10 +984,10 @@ console.log(position.state); // "PENDING"`}
                   <Building2 className="h-6 w-6 text-foreground" />
                 </div>
                 <h3 className="font-display text-xl font-bold text-foreground mb-3 group-hover:text-foreground transition-colors">
-                  Construction Escrow
+                  Construction Finance
                 </h3>
 	                <p className="text-muted-foreground mb-6">
-	                  Milestone and retainage workflows with configurable approvals and releases.
+	                  Tokenize pay apps, milestones, and retainage with lien/inspection attestations and gates.
 	                </p>
                 <div className="grid grid-cols-2 gap-4 mb-6">
                   <div className="text-center">
@@ -992,6 +1007,37 @@ console.log(position.state); // "PENDING"`}
                 </Button>
               </CardContent>
             </Card>
+
+            {/* Lending Card */}
+            <Card className="group hover:shadow-lg transition-all hover:border-dotted-monochrome">
+              <CardContent className="p-6">
+                <div className="h-12 w-12 rounded-xl bg-gray-100 border border-dotted-monochrome flex items-center justify-center mb-4">
+                  <Landmark className="h-6 w-6 text-foreground" />
+                </div>
+                <h3 className="font-display text-xl font-bold text-foreground mb-3 group-hover:text-foreground transition-colors">
+                  Lending
+                </h3>
+                <p className="text-muted-foreground mb-6">
+                  Tokenize loan notes and pools with servicing lifecycles and pluggable execution rails.
+                </p>
+                <div className="grid grid-cols-2 gap-4 mb-6">
+                  <div className="text-center">
+                    <div className="text-2xl font-bold text-foreground mb-1">Off-chain</div>
+                    <div className="text-xs text-muted-foreground">Ledger option</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-2xl font-bold text-foreground mb-1">Custodian</div>
+                    <div className="text-xs text-muted-foreground">Instruction rails</div>
+                  </div>
+                </div>
+                <Button variant="outline" className="w-full" asChild>
+                  <Link to="/solutions/lending">
+                    Explore Lending
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
@@ -1005,10 +1051,10 @@ console.log(position.state); // "PENDING"`}
               Real Results
             </BadgePill>
             <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-4">
-              Proven impact across the industry
+              Designed for measurable impact
             </h2>
             <p className="text-muted-foreground max-w-xl mx-auto">
-              Measurable outcomes from institutions already using EscrowGrid.
+              Outcomes vary by institution, but the primitives are universal: fewer bespoke workflows, stronger controls, and faster integration.
             </p>
           </div>
 
@@ -1044,7 +1090,7 @@ console.log(position.state); // "PENDING"`}
               Why EscrowGrid beats the alternatives
             </h2>
             <p className="text-muted-foreground max-w-xl mx-auto">
-              Direct comparison with custom builds and legacy escrow providers. See how our TaaS model delivers superior value.
+              Compare EscrowGrid to custom builds and rigid tokenization stacks. See how a clean control plane delivers durable value.
             </p>
           </div>
 
@@ -1056,7 +1102,7 @@ console.log(position.state); // "PENDING"`}
                 </div>
                 <h3 className="font-semibold text-foreground mb-2">Custom Build</h3>
                 <p className="text-sm text-muted-foreground mb-4">
-                  Building escrow infrastructure from scratch for each product
+                  Building tokenization infrastructure from scratch for each product
                 </p>
                 <div className="text-xs text-destructive font-medium">
                   6-12 months timeline • High maintenance • Compliance burden
@@ -1069,7 +1115,7 @@ console.log(position.state); // "PENDING"`}
                 </div>
                 <h3 className="font-semibold text-foreground mb-2">Legacy Providers</h3>
                 <p className="text-sm text-muted-foreground mb-4">
-                  Traditional escrow companies with manual processes
+                  Rigid tokenization stacks with limited integrations
                 </p>
                 <div className="text-xs text-muted-foreground font-medium">
                   Slow integration • Limited flexibility • High costs
@@ -1146,16 +1192,16 @@ console.log(position.state); // "PENDING"`}
               <h3 className="font-semibold text-foreground mb-4 text-center">The EscrowGrid Advantage</h3>
               <div className="grid md:grid-cols-3 gap-6 text-center">
                 <div>
-                  <div className="text-2xl font-bold text-foreground mb-2">85%</div>
-                  <div className="text-sm text-muted-foreground">Faster time-to-market</div>
+                  <div className="text-2xl font-bold text-foreground mb-2">Weeks</div>
+                  <div className="text-sm text-muted-foreground">Integration to first issuance</div>
                 </div>
                 <div>
-                  <div className="text-2xl font-bold text-foreground mb-2">70%</div>
-                  <div className="text-sm text-muted-foreground">Lower development cost</div>
+                  <div className="text-2xl font-bold text-foreground mb-2">Lower</div>
+                  <div className="text-sm text-muted-foreground">Engineering and maintenance load</div>
                 </div>
                 <div>
-                  <div className="text-2xl font-bold text-foreground mb-2">4x</div>
-                  <div className="text-sm text-muted-foreground">Better compliance coverage</div>
+                  <div className="text-2xl font-bold text-foreground mb-2">Audit‑ready</div>
+                  <div className="text-sm text-muted-foreground">Controls and evidence trails</div>
                 </div>
               </div>
             </div>

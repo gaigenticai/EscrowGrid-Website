@@ -16,7 +16,7 @@ export default function Contact() {
               Let's talk
             </h1>
             <p className="text-lg text-muted-foreground mb-12">
-              Ready to modernize your escrow operations? Schedule a demo or reach out directly.
+              Ready to modernize your asset tokenization workflows? Schedule a demo or reach out directly.
             </p>
 
             <div className="max-w-md mx-auto">
@@ -34,7 +34,7 @@ export default function Contact() {
                   Book a demo
                 </h2>
                 <p className="text-sm text-muted-foreground mb-4">
-                  30-minute call to explore how EscrowGrid fits your needs.
+                  30-minute call to explore your asset kinds, gates, and execution rails.
                 </p>
                 <span className="inline-flex items-center text-primary font-medium text-sm">
                   Schedule on Calendly

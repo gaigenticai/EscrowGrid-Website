@@ -1,10 +1,13 @@
 import { ArrowRight } from "lucide-react";
 
 const states = [
-  { label: "PENDING", color: "bg-muted text-muted-foreground" },
-  { label: "FUNDED", color: "bg-primary/20 text-primary" },
-  { label: "ACTIVE", color: "bg-primary text-primary-foreground" },
-  { label: "RELEASED", color: "bg-success text-success-foreground" },
+  { label: "draft", color: "bg-muted text-muted-foreground" },
+  { label: "submitted", color: "bg-primary/10 text-primary" },
+  { label: "verified", color: "bg-primary/20 text-primary" },
+  { label: "tokenized", color: "bg-primary text-primary-foreground" },
+  { label: "financed", color: "bg-success/90 text-success-foreground" },
+  { label: "servicing", color: "bg-success text-success-foreground" },
+  { label: "closed", color: "bg-muted text-muted-foreground" },
 ];
 
 export function EscrowFlowDiagram() {

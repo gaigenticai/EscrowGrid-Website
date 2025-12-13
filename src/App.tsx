@@ -3,14 +3,14 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Index from "./pages/Index";
-import Architecture from "./pages/Demo";
+import Architecture from "./pages/Architecture";
 import Pricing from "./pages/Pricing";
 import ROICalculator from "./pages/ROICalculator";
 import Platform from "./pages/Platform";
 import Solutions from "./pages/Solutions";
 import Construction from "./pages/Construction";
 import TradeFinance from "./pages/TradeFinance";
+import Lending from "./pages/Lending";
 import Developers from "./pages/Developers";
 import SecurityCompliance from "./pages/SecurityCompliance";
 import Company from "./pages/Company";
@@ -33,6 +33,7 @@ const App = () => (
           <Route path="/solutions" element={<Solutions />} />
           <Route path="/solutions/construction" element={<Construction />} />
           <Route path="/solutions/trade-finance" element={<TradeFinance />} />
+          <Route path="/solutions/lending" element={<Lending />} />
           <Route path="/developers" element={<Developers />} />
           <Route path="/security-compliance" element={<SecurityCompliance />} />
           <Route path="/company" element={<Company />} />

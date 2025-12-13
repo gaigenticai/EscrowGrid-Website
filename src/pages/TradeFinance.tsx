@@ -22,8 +22,8 @@ import { Link } from "react-router-dom";
 const tradeFinanceFeatures = [
   {
     icon: FileCheck,
-    title: "Template-Based LC Processing",
-    description: "Standardized TF_INVOICE and TF_LC templates with configurable release conditions."
+    title: "Canonical Asset Kinds",
+    description: "invoice, purchase_order, bill_of_lading, warehouse_receipt, acceptance — with audited default gates."
   },
   {
     icon: Shield,
@@ -33,7 +33,7 @@ const tradeFinanceFeatures = [
   {
     icon: Globe,
     title: "Major Currency Support",
-    description: "Multi‑currency positions using ISO 4217 codes; FX handled by your bank or treasury system."
+    description: "Multi‑currency assets using ISO 4217 codes; FX handled by your bank or treasury system."
   },
   {
     icon: Banknote,
@@ -48,7 +48,7 @@ const tradeFinanceFeatures = [
   {
     icon: AlertCircle,
     title: "Audit Trails",
-    description: "Complete ledger and audit history with optional signed webhooks."
+    description: "Complete audit history with actor attribution and exportable events."
   }
 ];
 
@@ -57,9 +57,9 @@ const lcWorkflow = [
     step: 1,
     title: "Order Placement",
     description:
-      "Buyer places the order and initiates an escrow position using the TF_INVOICE template. Funds move into the escrow structure with release conditions defined upfront.",
-    documents: ["Purchase Order", "TF_INVOICE Template", "Escrow Terms"],
-    processingTime: "Policy-driven SLA"
+      "Buyer and seller are onboarded as parties, and the underlying trade asset is recorded with evidence requirements and gates defined upfront.",
+    documents: ["Purchase Order", "Commercial Terms", "Required Evidence Checklist"],
+    processingTime: "Gate-driven workflow"
   },
   {
     step: 2,
@@ -99,7 +99,7 @@ const supportedDocuments = [
 ];
 
 const complianceFrameworks = [
-  { name: "Core LC Standards", description: "UCP 600-aligned template flows", coverage: "Template-based" },
+  { name: "Trade Standards", description: "Document/evidence gating aligned to your trade policies", coverage: "Configurable" },
   { name: "Bring‑Your‑Own KYC/AML", description: "Rely on your bank/provider attestations", coverage: "Integration" },
   { name: "Policy Rules", description: "Configurable release rules by region", coverage: "Configurable" },
   { name: "Audit Trail", description: "Complete transaction logging and evidence trail", coverage: "Built-in" },
@@ -120,13 +120,14 @@ export default function TradeFinance() {
               </BadgePill>
               <h1 className="font-display text-3xl sm:text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 text-shadow-retro">
                 Global Trade Meets
-                <span className="block border-b-2 sm:border-b-4 border-current pb-1 sm:pb-2">Digital Escrow Security</span>
+                <span className="block border-b-2 sm:border-b-4 border-current pb-1 sm:pb-2">
+                  Tokenization Infrastructure
+                </span>
               </h1>
               <p className="text-base sm:text-lg mb-6 sm:mb-8 leading-relaxed">
-                Revolutionize international trade with template-based invoice and LC escrow,
-                policy-driven releases, and seamless cross-border settlement.
-                Process transactions in <span className="font-semibold border-b-2 border-current">24-48 hours instead of weeks</span>
-                while relying on your bank’s KYC/AML and regional compliance rules.
+                Tokenize invoices and trade documents with evidence requirements, anti-double-finance gates,
+                and an immutable audit trail. Keep settlement on your preferred rails (banking, custodial, or ledger),
+                while relying on your institution’s KYC/AML and jurisdictional rules via attestations.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                 <Button size="lg" className="bg-foreground hover:bg-secondary text-background border-2 border-dashed-monochrome text-shadow-retro" asChild>
@@ -226,10 +227,10 @@ export default function TradeFinance() {
         <div className="container">
           <div className="text-center mb-12">
             <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-4">
-              Trade Finance Escrow: Invoice & LC Flows
+              Trade Finance Tokenization: Invoices & Documents
             </h2>
             <p className="text-muted-foreground max-w-xl mx-auto">
-              Cross-border trade finance requires evidence-based release mechanisms, precise document verification, and timeline enforcement. EscrowGrid&apos;s TF_INVOICE and TF_LC templates coordinate buyers, sellers, and institutions with built-in policy controls for documents, timelines, and jurisdictional requirements.
+              Cross-border trade finance requires evidence, precise document handling, and timeline enforcement. EscrowGrid coordinates buyers, sellers, and institutions with canonical gates (including anti-double-finance) and an immutable audit trail.
             </p>
           </div>
 
@@ -313,7 +314,7 @@ export default function TradeFinance() {
               Policy & Compliance (Bring‑Your‑Own)
             </h2>
             <p className="text-muted-foreground max-w-xl mx-auto">
-              EscrowGrid provides policy layers and audit trails; your institution supplies KYC/AML and jurisdiction-specific rules.
+              EscrowGrid enforces gates and records attestations; your institution supplies KYC/AML and jurisdiction-specific rules via existing systems.
             </p>
           </div>
 
@@ -369,7 +370,7 @@ export default function TradeFinance() {
             Ready to modernize your trade finance operations?
           </h2>
           <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
-            Join leading banks and fintech platforms using EscrowGrid for automated trade finance processing.
+            Define your asset kinds and evidence requirements, integrate your approvals/KYC/AML, and let EscrowGrid enforce the workflow end-to-end.
           </p>
           <div className="flex justify-center gap-4">
             <Button size="lg" className="bg-foreground hover:bg-secondary text-background border-2 border-dashed-monochrome text-shadow-retro" asChild>

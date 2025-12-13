@@ -167,12 +167,12 @@ export default function SecurityCompliance() {
                   Important disclaimer
                 </h3>
                 <p className="text-sm text-muted-foreground">
-                  EscrowGrid is infrastructure software, not a licensed escrow agent or financial 
-                  institution. Your institution is responsible for obtaining and maintaining all 
-                  required licenses, registrations, and regulatory approvals for operating escrow 
-                  services in your jurisdictions. EscrowGrid provides technical capabilities to 
-                  support compliant operations but does not provide legal, regulatory, or 
-                  compliance advice.
+                  EscrowGrid is infrastructure software, not a marketplace and not a regulated
+                  financial institution, broker/dealer, custodian, trustee, escrow agent, or
+                  transfer agent. Your institution is responsible for obtaining and maintaining all
+                  required licenses, registrations, and regulatory approvals for your product in
+                  your jurisdictions. EscrowGrid provides technical capabilities to support
+                  compliant operations but does not provide legal, regulatory, or compliance advice.
                 </p>
               </div>
             </div>
@@ -198,11 +198,11 @@ export default function SecurityCompliance() {
                 Performance Monitoring
               </h3>
               <ul className="space-y-2 text-sm text-muted-foreground">
-                <li>• Real-time escrow business metrics</li>
+                <li>• Real-time asset and tokenization metrics</li>
                 <li>• Transaction success/failure tracking</li>
                 <li>• Asset and institution monitoring</li>
                 <li>• Blockchain transaction analytics</li>
-                <li>• Intelligent alerting with webhooks</li>
+                <li>• Intelligent alerting via integrations</li>
               </ul>
             </div>
             <div className="bg-card rounded-xl border border-border p-6">

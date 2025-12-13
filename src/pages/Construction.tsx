@@ -24,13 +24,13 @@ import { Link } from "react-router-dom";
 const constructionFeatures = [
   {
     icon: FileCheck,
-    title: "Construction Escrow Templates",
-    description: "Pre-built CONSTR_ESCROW and CONSTR_RETAINAGE templates with extensible configuration."
+    title: "Construction Asset Kinds",
+    description: "Canonical gates for pay_application, milestone, retainage, and change_order (tenant-overridable)."
   },
   {
     icon: ShieldCheck,
     title: "Policy-Driven Releases",
-    description: "Configurable policy checks per region, with conditional releases and multi-party approvals on the roadmap."
+    description: "Gate lifecycle transitions and token operations with attestations (approvals, inspections, lien waivers)."
   },
   {
     icon: Calculator,
@@ -39,8 +39,8 @@ const constructionFeatures = [
   },
   {
     icon: FileCheck,
-    title: "Audit Trail & Webhooks",
-    description: "Full position and ledger history with optional signed webhooks for milestone events."
+    title: "Audit Trail & Exports",
+    description: "Immutable audit events and evidence history for reviews, reporting, and investigations."
   },
   {
     icon: Shield,
@@ -56,18 +56,18 @@ const constructionFeatures = [
 
 const milestoneWorkflow = [
   {
-    phase: "Contract Execution & Escrow Setup",
+    phase: "Contract Execution & Setup",
     percentage: "1",
     description:
-      "Loan agreement is finalized with escrow terms, the escrow account is opened at a neutral institution, and initial funds are deposited.",
+      "Contract terms are finalized and parties are onboarded. EscrowGrid records the asset, evidence, and required attestations; settlement accounts remain with your bank/rails.",
     verification: [
-      "Loan agreement with escrow terms",
-      "Escrow account opened",
-      "Initial funds confirmed"
+      "Contract executed",
+      "Parties onboarded",
+      "Initial conditions verified"
     ],
     releaseConditions: [
       "Draw schedule established with milestones",
-      "Escrow structure configured",
+      "Lifecycle gates configured",
       "Stakeholders onboarded"
     ]
   },
@@ -107,7 +107,7 @@ const milestoneWorkflow = [
     phase: "Retainage Holdback Management",
     percentage: "4",
     description:
-      "Retainage accumulates in escrow, tracked separately per contractor and subcontractor as security for completion and warranty.",
+      "Retainage is tracked as a first-class asset and controlled via gates (approvals, lien waivers, and inspections).",
     verification: [
       "Retainage balances tracked",
       "Contractor-level allocations",
@@ -139,7 +139,7 @@ const milestoneWorkflow = [
     phase: "Final Completion & Release",
     percentage: "6",
     description:
-      "All punch list items are completed, final lien waivers are collected, and the engineer certifies final completion so remaining retainage can be released and the escrow closed.",
+      "All punch list items are completed, final lien waivers are collected, and the engineer certifies final completion so remaining retainage can be released and the asset can be closed.",
     verification: [
       "All punch list items cleared",
       "Final lien waivers collected",
@@ -194,17 +194,16 @@ export default function Construction() {
             <div>
               <BadgePill className="mb-4 sm:mb-6 border-2 border-dotted-monochrome">
                 <Building2 className="w-3 h-3 mr-1" />
-                Construction Escrow Solution
+                Construction Finance
               </BadgePill>
               <h1 className="font-display text-3xl sm:text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 text-shadow-retro">
                 Construction Payment
                 <span className="block border-b-2 sm:border-b-4 border-current pb-1 sm:pb-2">Security & Control</span>
               </h1>
               <p className="text-base sm:text-lg mb-6 sm:mb-8 leading-relaxed">
-                Protect your construction projects with milestone-based escrow that ensures
-                fair payments, retainage holdbacks, and configurable releases.
-                Reduce payment cycles from <span className="font-semibold border-b-2 border-current">60-90 days to 30-45 days</span>
-                while maintaining full audit trails.
+                Tokenize pay applications, milestones, and retainage with evidence-based controls.
+                Enforce approvals (internal or external), record inspections and lien waivers as attestations,
+                and keep an immutable audit trail from submission to final release.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-6 sm:mb-8">
                 <Button size="lg" className="bg-foreground hover:bg-secondary text-background border-2 border-dashed-monochrome text-shadow-retro" asChild>
@@ -278,10 +277,10 @@ export default function Construction() {
         <div className="container">
           <div className="text-center mb-12">
             <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-4">
-              Construction Escrow Lifecycle
+              Construction Finance Lifecycle
             </h2>
             <p className="text-muted-foreground max-w-xl mx-auto">
-              From contract execution to final retainage release, EscrowGrid automates each stage of the construction escrow lifecycle with policy-driven controls, immutable audit trails, and real-time visibility for all stakeholders.
+              From contract execution to final retainage release, EscrowGrid coordinates each stage with evidence, attestations, immutable audit trails, and a lifecycle state machine.
             </p>
           </div>
 
@@ -402,7 +401,7 @@ export default function Construction() {
               Supported Project Types
             </h2>
             <p className="text-muted-foreground max-w-xl mx-auto">
-              Scalable escrow solutions for all types of construction projects and contract values.
+              Scalable tokenization infrastructure for all types of construction projects and contract values.
             </p>
           </div>
 
@@ -438,7 +437,7 @@ export default function Construction() {
         <div className="container">
           <div className="text-center mb-12">
             <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-4">
-              Advanced Construction Escrow Features
+              Advanced Construction Finance Features
             </h2>
             <p className="text-muted-foreground max-w-xl mx-auto">
               Comprehensive tools for managing complex construction payment workflows.
@@ -470,7 +469,7 @@ export default function Construction() {
             Ready to streamline your construction payments?
           </h2>
           <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
-            Join leading construction companies using EscrowGrid for automated milestone payments and compliance management.
+            Define your asset kinds, evidence requirements, and approvals — then let EscrowGrid enforce them with an immutable audit trail.
           </p>
           <div className="flex justify-center gap-4">
             <Button size="lg" className="bg-foreground hover:bg-secondary text-background border-2 border-dashed-monochrome text-shadow-retro" asChild>

@@ -38,8 +38,8 @@ export default function Company() {
               Why we're building EscrowGrid
             </h1>
             <p className="text-lg text-muted-foreground">
-              Escrow is critical infrastructure for complex transactions. Yet most institutions 
-              still run on spreadsheets, emails, and manual processes. We're changing that.
+              Tokenization is becoming critical infrastructure for regulated assets. Yet most institutions
+              still run on spreadsheets, emails, and bespoke integrations. We're changing that.
             </p>
           </div>
         </div>
@@ -55,20 +55,20 @@ export default function Company() {
             <div className="space-y-4 text-muted-foreground">
               <p>
                 Construction lenders tracking $100M+ projects in Excel. Trade finance desks 
-                manually reconciling release conditions across email threads. Fintech platforms 
-                building escrow logic from scratch every time.
+                manually reconciling documents across email threads. Lending teams stitching together
+                servicing systems and reporting. Fintech platforms rebuilding tokenization plumbing from scratch.
               </p>
               <p>
-                The escrow industry moves trillions of dollars annually, but the infrastructure 
-                behind it hasn't kept pace. Every institution reinvents the wheel — or worse, 
-                relies on fragile manual processes that introduce risk.
+                The asset lifecycle is the same everywhere: record the asset, collect evidence, enforce approvals,
+                issue a position, service it, and close it. The infrastructure behind those steps hasn't kept pace.
+                Every institution reinvents the wheel — or relies on fragile manual processes that introduce risk.
               </p>
               <p>
                 <strong className="text-foreground">
-                  EscrowGrid exists to provide the modern infrastructure layer that institutions need.
+                  EscrowGrid exists to provide the modern tokenization control plane that institutions need.
                 </strong>{" "}
-                Purpose-built APIs, configurable templates, and policy engines that scale 
-                from your first position to your millionth.
+                Purpose-built APIs, canonical gates, and a pluggable execution layer that scale
+                from your first asset to your millionth.
               </p>
             </div>
           </div>
@@ -110,15 +110,15 @@ export default function Company() {
               What's next
             </h2>
             <p className="text-muted-foreground mb-8">
-              We're continuously expanding EscrowGrid's capabilities. Upcoming features include 
-              enhanced multi-currency support, additional regional policy modules, and deeper 
-              integrations with banking and payment systems.
+              We’re continuously expanding EscrowGrid’s canonical gates and adapters. Upcoming work focuses on
+              deeper integrations (KYC/AML, trustees, legal docs, credit scoring), more asset kinds, and hardened
+              deployment posture for regulated environments.
             </p>
             <div className="flex flex-wrap justify-center gap-3">
-              <BadgePill variant="muted">Multi-currency ledger</BadgePill>
-              <BadgePill variant="muted">Payment rail integrations</BadgePill>
-              <BadgePill variant="muted">Mobile admin app</BadgePill>
-              <BadgePill variant="muted">Advanced analytics</BadgePill>
+              <BadgePill variant="muted">Tenant gate overrides</BadgePill>
+              <BadgePill variant="muted">Execution adapters</BadgePill>
+              <BadgePill variant="muted">Attestation integrations</BadgePill>
+              <BadgePill variant="muted">Audit hardening</BadgePill>
             </div>
           </div>
         </div>
@@ -128,10 +128,10 @@ export default function Company() {
       <section className="py-20">
         <div className="container text-center">
           <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-4">
-            Let's build the future of escrow together
+            Let's build the future of tokenization together
           </h2>
           <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
-            Whether you're exploring a new escrow product or modernizing existing operations, 
+            Whether you're exploring trade finance, construction finance, or lending tokenization,
             we'd love to hear from you.
           </p>
           <div className="flex justify-center gap-4">

@@ -1,24 +1,32 @@
 import { Link } from "react-router-dom";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { BadgePill } from "@/components/ui/badge-pill";
-import { Building2, Ship, ArrowRight } from "lucide-react";
+import { Building2, Ship, Landmark, ArrowRight } from "lucide-react";
 
 const solutions = [
   {
     icon: Building2,
-    title: "Construction Escrow",
+    title: "Construction Finance",
     description:
-      "Progress-based draws, milestone releases, and retainage management for infrastructure and real estate projects.",
-    href: "/solutions/construction-escrow",
-    templates: ["CONSTR_ESCROW", "CONSTR_RETAINAGE"],
+      "Tokenize pay apps, milestones, and retainage with gate-enforced approvals (lien waivers, inspections, and draw controls).",
+    href: "/solutions/construction",
+    templates: ["pay_application", "milestone", "retainage", "change_order"],
   },
   {
     icon: Ship,
-    title: "Trade Finance Escrow",
+    title: "Trade Finance",
     description:
-      "Invoice-backed and LC-style flows with counterparty risk mitigation for import/export transactions.",
-    href: "/solutions/trade-finance-escrow",
-    templates: ["TF_INVOICE", "TF_LC"],
+      "Tokenize invoices, POs, bills of lading, and warehouse receipts with anti-double-finance gates and evidence trails.",
+    href: "/solutions/trade-finance",
+    templates: ["invoice", "purchase_order", "bill_of_lading", "warehouse_receipt", "acceptance"],
+  },
+  {
+    icon: Landmark,
+    title: "Lending",
+    description:
+      "Tokenize loan notes and pools with servicing state machines, payment evidence, and pluggable settlement rails.",
+    href: "/solutions/lending",
+    templates: ["loan_note", "loan_pool", "collateral"],
   },
 ];
 
@@ -33,11 +41,11 @@ export default function Solutions() {
               Solutions
             </BadgePill>
             <h1 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-6">
-              Purpose-built escrow solutions
+              Purpose-built tokenization slices
             </h1>
             <p className="text-lg text-muted-foreground">
-              Pre-configured templates and workflows designed for specific industries. 
-              Start with our solutions, customize to your needs.
+              Start with audited canonical gates for each asset kind, then tune requirements per tenant.
+              EscrowGrid is infrastructure — not a marketplace — and integrates with your existing compliance stack.
             </p>
           </div>
         </div>
@@ -46,7 +54,7 @@ export default function Solutions() {
       {/* Solutions Grid */}
       <section className="py-16 bg-card border-y border-border">
         <div className="container">
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {solutions.map((solution) => {
               const Icon = solution.icon;
               return (
@@ -87,8 +95,8 @@ export default function Solutions() {
             Need a custom solution?
           </h2>
           <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
-            Our platform is highly configurable. Let's discuss how we can tailor 
-            EscrowGrid to your specific requirements.
+            Our gates, policies, and execution adapters are composable. Let’s discuss how we can
+            tailor EscrowGrid to your asset and regulatory requirements.
           </p>
           <a
             href="https://calendly.com/krishnagai"

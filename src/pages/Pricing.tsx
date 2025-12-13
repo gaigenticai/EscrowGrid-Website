@@ -26,16 +26,17 @@ const plans = [
     price: "Custom",
     icon: Rocket,
     features: [
-      "Up to $10M in monthly escrow volume",
-      "Basic templates (General Escrow)",
-      "US region only",
+      "Trial-to-paid licensing",
+      "Core asset + token series APIs",
+      "Canonical gates for supported asset kinds",
+      "Single-region policy defaults",
       "Email support",
-      "Basic audit logs",
+      "Audit events (query/export)",
       "Standard API access with idempotency",
     ],
     limitations: [
-      "No custom templates",
-      "No webhook support",
+      "Limited adapter options",
+      "Limited retention window",
       "No dedicated account manager"
     ],
     cta: "Contact Sales",
@@ -47,12 +48,12 @@ const plans = [
     price: "Custom",
     icon: TrendingUp,
     features: [
-      "Up to $100M in monthly escrow volume",
+      "Higher throughput and retention",
       "All starter features +",
-      "Custom templates & workflows",
-      "Multi-region support (US, EU, UK, SG, UAE)",
-      "Webhook integrations",
-      "Advanced policy engine",
+      "Tenant gate overrides",
+      "Multi-region policy defaults",
+      "Execution adapters (off-chain / permissioned / custodian / EVM)",
+      "Integrations for attestations",
       "Priority support (24h response)",
       "Team collaboration tools",
       "Operational metrics & audit exports",
@@ -67,15 +68,14 @@ const plans = [
     price: "Custom",
     icon: Crown,
     features: [
-      "Unlimited escrow volume",
+      "Custom scale + SLAs",
       "All Growth features +",
       "Dedicated infrastructure options",
-      "Bring‑your‑own KYC & compliance integrations",
-      "Blockchain integration",
-      "White-label solutions",
+      "Bring‑your‑own KYC & compliance systems",
+      "On-prem deployment (Docker/Helm)",
+      "Custom execution and integration adapters",
       "Dedicated account manager",
       "SLA guarantees (99.9% uptime)",
-      "On-premises deployment option",
       "Custom integrations & APIs",
     ],
     limitations: [],
@@ -87,7 +87,7 @@ const plans = [
 const faqs = [
   {
     question: "How does pricing work?",
-    answer: "EscrowGrid pricing is based on your monthly escrow volume and feature requirements. We offer custom quotes for each institution to ensure you get the best value for your specific use case."
+    answer: "Pricing is based on deployment model (SaaS vs on‑prem), throughput/retention needs, and which execution + integration adapters you require. We provide custom quotes per institution."
   },
   {
     question: "What's included in the setup fee?",
@@ -103,7 +103,7 @@ const faqs = [
   },
   {
     question: "What payment methods do you accept?",
-    answer: "We accept wire transfers, ACH payments, and cryptocurrency payments for institutional customers. All payments are processed securely through our escrow system."
+    answer: "We invoice institutional customers via standard enterprise billing terms. Settlement rails for your assets remain with your institution and partners."
   }
 ];
 
@@ -259,7 +259,7 @@ export default function Pricing() {
                 </div>
                 <h3 className="font-semibold mb-2">Scale Faster</h3>
                 <p className="text-sm text-muted-foreground">
-                  Launch new escrow products in weeks, not months, with our proven infrastructure.
+                  Launch tokenization workflows in weeks, not months, with a clean control plane and pluggable execution rails.
                 </p>
               </div>
             </div>
@@ -303,7 +303,7 @@ export default function Pricing() {
               Ready to get started?
             </h2>
             <p className="text-primary-foreground/80 mb-8 max-w-xl mx-auto">
-              Talk to our team about your escrow needs and get a custom pricing proposal.
+              Talk to our team about your asset kinds, gates, and execution rails and get a custom proposal.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button

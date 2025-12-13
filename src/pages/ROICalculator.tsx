@@ -47,7 +47,7 @@ export default function ROICalculator() {
               Calculate your savings
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              See how much time and money you can save by automating escrow operations with EscrowGrid.
+              See how much time and money you can save by automating tokenization operations with EscrowGrid.
             </p>
             <Button size="lg" asChild>
               <Link to="/architecture">
@@ -73,13 +73,13 @@ export default function ROICalculator() {
                     Your Current Operations
                   </CardTitle>
                   <CardDescription>
-                    Enter your current escrow processing metrics
+                    Enter your current processing metrics
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-6">
                   <div>
                     <Label className="text-sm font-medium">
-                      Monthly escrow positions: <span className="text-primary">{monthlyPositions[0]}</span>
+                      Monthly assets or token series: <span className="text-primary">{monthlyPositions[0]}</span>
                     </Label>
                     <Slider
                       value={monthlyPositions}
@@ -133,7 +133,7 @@ export default function ROICalculator() {
 
                   <div>
                     <Label className="text-sm font-medium">
-                      Team members managing escrow: <span className="text-primary">{teamSize[0]}</span>
+                      Team members managing operations: <span className="text-primary">{teamSize[0]}</span>
                     </Label>
                     <Slider
                       value={teamSize}
@@ -212,7 +212,7 @@ export default function ROICalculator() {
                   <div className="flex items-start gap-3">
                     <CheckCircle className="w-4 h-4 text-primary mt-0.5" />
                     <div className="text-sm">
-                      <strong>Faster go-to-market:</strong> Launch new escrow products in weeks, not months
+                      <strong>Faster go-to-market:</strong> Launch new tokenization workflows in weeks, not months
                     </div>
                   </div>
                 </CardContent>

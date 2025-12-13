@@ -14,8 +14,9 @@ const navItems = [
     label: "Solutions",
     href: "/solutions",
     children: [
-      { label: "Construction Escrow", href: "/solutions/construction" },
-      { label: "Trade Finance Escrow", href: "/solutions/trade-finance" },
+      { label: "Construction Finance", href: "/solutions/construction" },
+      { label: "Trade Finance", href: "/solutions/trade-finance" },
+      { label: "Lending", href: "/solutions/lending" },
     ],
   },
   // { label: "Pricing", href: "/pricing" }, // Hidden from navigation
